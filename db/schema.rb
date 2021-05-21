@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2021_05_21_132443) do
   enable_extension "plpgsql"
 
   create_table "messages", force: :cascade do |t|
-    t.string "content"
     t.integer "vote"
     t.bigint "user_id", null: false
     t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "content"
     t.index ["room_id"], name: "index_messages_on_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
