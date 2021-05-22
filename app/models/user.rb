@@ -11,7 +11,9 @@ class User < ApplicationRecord
   has_many :rooms, through: :participants
   validates :alias, presence: true, length: { in: 5..12 },
                     uniqueness: { message: "this alias is being used by another user" }
-  validates :first_name, presence: true
+  validates :first_name, uniqueness: { scope: :year,
+                                       message: "user already registered with this first and last name" },
+                         presence: true
   validates :last_name, presence: true
   validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 20,
                                                   less_than_or_equal_to: 100 }

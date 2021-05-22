@@ -3,6 +3,6 @@ class Room < ApplicationRecord
 
   has_many :messages, dependent: :destroy
   has_many :users, through: :participants
-  validates :name, presence: true
-  validates :room, presence: true, inclusion: { in: TYPE }
+  validates :name, presence: true, uniqueness: true
+  validates :room_type, presence: true, inclusion: { in: TYPE }
 end
