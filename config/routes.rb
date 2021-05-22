@@ -5,9 +5,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:new, :create]
     resources :participants, only: [:new, :create]
   end
-  resources :rooms, only: [:show] do
-    resources :messages, only: [:index]
-  end
+  resources :rooms, only: [:show]
   # I want the user to create a new user --> once the user is created, it will be assigned to the corresponding rooms (4)
   # I want the user to go to his profile page if the user has been created
   # I want the user to be able to create a message & edit & destroy it (only if it is its owner)
