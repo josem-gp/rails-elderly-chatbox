@@ -1,0 +1,8 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :age %>
+  <%= f.input :municipality, collection: User::ADDRESSES%>
+  <%= f.input :alias %>
+  <%= f.submit "Create user", class: "btn btn-primary" %>
+<% end %>

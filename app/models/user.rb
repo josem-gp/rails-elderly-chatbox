@@ -10,7 +10,8 @@ class User < ApplicationRecord
   has_many :messages
   has_many :rooms, through: :participants
   validates :alias, presence: true, length: { in: 3..12 },
-                    uniqueness: { message: "this alias is being used by another user" }
+                    uniqueness: { message: "this alias is being used by another user",
+                                  case_sensitive: false }
   validates :first_name, uniqueness: { scope: :last_name,
                                        message: "user already registered with this first and last name" },
                          presence: true

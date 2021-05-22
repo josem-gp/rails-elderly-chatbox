@@ -1,0 +1,4 @@
+<%= simple_form_for [@user, @participant] do |f| %>
+  <%= f.association :room, collection: Room.where(name: @user.municipality.match(/(\w*)-/)[1].strip).or(Room.where(room_type: 'public')), prompt: "Choose a Room" %>
+  <%= f.submit "Join the room", class: "btn btn-primary" %>
+<% end %>

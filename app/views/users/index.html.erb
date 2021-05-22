@@ -1,0 +1,7 @@
+<h1>Neighbours!</h1>
+
+<% @users.each do |user| %>
+<%= link_to user_path(user) do %>
+<p><%= user.first_name %></p>
+<% end %>
+<% end %>
