@@ -1,8 +1,15 @@
-<%= simple_form_for @user do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :age %>
-  <%= f.input :municipality, collection: User::ADDRESSES%>
-  <%= f.input :alias %>
-  <%= f.submit "Create user", class: "btn btn-primary" %>
-<% end %>
+  <div class="main-form">
+  <div class="form-container">
+    <h3>Create an account</h3>
+    <%= simple_form_for @user do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :age %>
+      <%= f.input :municipality, collection: User::ADDRESSES%>
+      <%= f.input :alias %>
+      <%= f.submit "Sign up", class: "btn-sign" %>
+    <% end %>
+    <%= link_to 'Go back', root_path, class: "btn-log" %>
+  </div>
+  <%= image_tag "signup-form.png", alt: "Signup Form", width: 550, height: 550, class: "img-signup" %>
+</div>

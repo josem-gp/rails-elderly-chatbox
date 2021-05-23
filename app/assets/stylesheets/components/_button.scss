@@ -12,3 +12,19 @@
   color: white;
   text-decoration: none;
 }
+
+.btn-sign {
+  border: none;
+  color: white;
+  padding: ($padding * 1) ($padding * 3);
+  border-radius: $border-radius * 2;
+  background: $purple;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-sign:hover {
+  background: $purple-hover;
+  color: white;
+  text-decoration: none;
+}
