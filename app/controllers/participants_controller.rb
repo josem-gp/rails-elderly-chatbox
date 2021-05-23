@@ -7,10 +7,11 @@ class ParticipantsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
+    @room = Room.find(params[:participant][:room_id])
     @participant = Participant.new(participant_params)
     @participant.user = @user
     if @participant.save
-      redirect_to user_path(@user)
+      redirect_to user_room_path(@user,@room)
     else
       render :new
     end

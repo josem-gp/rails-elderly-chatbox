@@ -5,10 +5,10 @@
       <%= f.input :first_name %>
       <%= f.input :last_name %>
       <%= f.input :age %>
-      <%= f.input :municipality, collection: User::ADDRESSES%>
+      <%= f.input :municipality, collection: User::ADDRESSES.sort, input_html: { class: 'select2' } %>
       <%= f.input :alias %>
-      <%= f.submit "Sign up", class: "btn-sign" %>
       <%= link_to 'Go back', root_path, class: "btn-back" %>
+      <%= f.submit "Sign up", class: "btn-sign" %>
     <% end %>
   </div>
   <%= image_tag "signup-form.png", alt: "Signup Form", width: 550, height: 550, class: "img-signup" %>
