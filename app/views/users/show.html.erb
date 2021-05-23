@@ -5,19 +5,19 @@
         <%= image_tag "avatar.jpg", alt: "Signup Form", class: "avatar-borderlg" %>
         <h1><%= @user.first_name %></h1>
       </div>
-      <div class = "container-infoshow">
-        <h3>Rooms: </h3>
-        <% @user.rooms.each do |room| %>
-          <%= link_to room_path(room) do %>
-            <p><%= room.name %></p>
-          <% end %>
-        <% end %>
-      </div>
       <div class="container-infoshow">
+        <h3>Rooms: </h3>
+        <div class = "rooms-infoshow">
+          <% @user.rooms.each do |room| %>
+            <%= link_to "#{room.name}", room_path(room), class: "room-tag" %>
+          <% end %>
+        </div>
         <h3>Messages written:</h3>
-        <% @user.messages.each do |message| %>
-          <p><%= message.content %></p>
-        <% end %>
+        <div class="messages-infoshow">
+          <% @user.messages.each do |message| %>
+            <p><%= message.content %></p>
+          <% end %>
+        </div>
       </div>
       <%= link_to 'Go back', root_path, class: "btn-back" %>
     </div>

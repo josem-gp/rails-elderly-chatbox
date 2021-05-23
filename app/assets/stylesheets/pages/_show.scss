@@ -5,6 +5,8 @@
     flex-grow: 2;
     .btn-back {
       margin: 0;
+      margin-top: $margin;
+      margin-left: $margin * 4;
     }
   }
   .message-form {
@@ -34,3 +36,15 @@
   }
 }
 
+.rooms-infoshow {
+  display: flex;
+}
+
+.messages-infoshow {
+  p{
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: $padding * 2;
+  }
+}

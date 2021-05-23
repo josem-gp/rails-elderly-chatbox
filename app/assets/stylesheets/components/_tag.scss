@@ -1,0 +1,14 @@
+.room-tag {
+  background-color: $purple-tag;
+  text-decoration: none;
+  color: white;
+  padding: ($padding * 2) ($padding * 6);
+  border-radius: $border-radius * 2;
+  margin: $margin * 3;
+}
+
+.room-tag:hover {
+  background-color: $purple;
+  color:white;
+  text-decoration: none;
+}
