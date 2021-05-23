@@ -6,6 +6,9 @@ h1 {
   margin: 0 auto;
   margin-top: ($margin * 20);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  }
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
+.btn-back {
+  margin-left: $margin * 16;
+}

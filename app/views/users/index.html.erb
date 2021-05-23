@@ -1,18 +1,18 @@
 <div class="main-container">
   <div class="container">
-    <h1>Welcome to the Neighborhood</h1>
+    <h1>Our Neighbours</h1>
     <div class="container-grid">
-      <div class="card-product">
       <% @users.each do |user| %>
+        <div class="card-product">
         <%= link_to user_path(user) do %>
           <%= image_tag "avatar.jpg", alt: "Signup Form", class: "avatar-borderlg" %>
+        <% end %>
           <div class="card-product-infos">
             <h2><%= "#{user.first_name} (#{user.alias})"%></h2>
             <p><%= "Total messages: #{user.messages.count}"%></p>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
     </div>
     <%= link_to 'Go back', root_path, class: "btn-back" %>
   </div>
