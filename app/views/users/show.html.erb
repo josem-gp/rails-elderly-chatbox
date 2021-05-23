@@ -6,3 +6,12 @@
 <% @user.messages.each do |message| %>
 <p><%= message.content %></p>
 <% end %>
+
+
+<h3>Groups: </h3>
+<% @user.rooms.each do |room| %>
+<%= link_to room_path(room) do %>
+<p><%= room.name %></p>
+<% end %>
+<% end %>
+

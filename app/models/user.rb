@@ -8,6 +8,7 @@ class User < ApplicationRecord
                   Okutama-machi Hinohara-mura Hachioji-shi Machida-shi]
 
   has_many :messages
+  has_many :participants
   has_many :rooms, through: :participants
   validates :alias, presence: true, length: { in: 3..12 },
                     uniqueness: { message: "this alias is being used by another user",
@@ -19,7 +20,6 @@ class User < ApplicationRecord
   validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 20,
                                                   less_than_or_equal_to: 100 }
   validates :municipality, presence: true, inclusion: { in: ADDRESSES }
-
   def capitalize_first
     first_name.capitalize
   end

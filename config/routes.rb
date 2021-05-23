@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
   # I want the user to be able to enter a new room
   # I want the user to be able to upvote messages
-  # I want the room to display the messages written
+  # DONE. I want the room to display the messages written
 end
