@@ -5,7 +5,7 @@
       <% @users.each do |user| %>
         <div class="card-product">
         <%= link_to user_path(user) do %>
-          <%= image_tag "avatar.jpg", alt: "Signup Form", class: "avatar-borderlg" %>
+          <%= image_tag "user-icon.png", alt: "Signup Form", class: "avatar-borderlg" %>
         <% end %>
           <div class="card-product-infos">
             <h2><%= "#{user.first_name} (#{user.alias})"%></h2>

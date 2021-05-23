@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <%= link_to 'Go back', root_path, class: "btn-back" %>
+        <%= link_to 'Go back', user_path(@user), class: "btn-back" %>
       </div>
       <div class= "c-container">
         <div class="chat-secondary-container">
@@ -47,7 +47,7 @@
             <div class="inner-chat-display">
               <% @room.messages.each do |message| %>
               <div class="user-message">
-                <%= image_tag "avatar.jpg", alt: "Signup Form", class: "avatar" %>
+                <%= image_tag "user-icon.png", alt: "User icon", class: "avatar-bordered" %>
                 <div class = "message-text">
                   <h3><%= message.user.alias %></h3>
                   <p><%= message.content %></p>
