@@ -1,7 +1,25 @@
-<h1> Welcome to Neighbourly</h1>
-
-<p>If you are registered already then click to sign in!</p>
-<%= link_to 'Sign in', users_path %>
-
-<p>If not then sign up please!</p>
-<%= link_to 'Sign up', new_user_path %>
+<style>
+  body{
+    background-color: #eaecf8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill-opacity='0.57'%3E%3Cpolygon fill='%23eef0f9' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23f2f4fb' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23f7f7fc' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23fbfbfe' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23ffffff' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
+<div class="main-container">
+<div class="container">
+  <div class = homepage-header>
+    <h2>Neighbourly</h2>
+    <%= link_to 'Sign in', users_path, class: "btn-log" %>
+  </div>
+  <div class="homepage-container">
+    <h1>Where connections<br>happen.</h1>
+    <p>Are you ready? </p>
+  </div>
+  <div class="homepage-signup">
+    <p>Create an account</p>
+    <%= link_to 'Sign up', new_user_path, class: "btn-log" %>
+  </div>
+  <%= image_tag "homepage-icon.png", alt: "Homepage Icon", width: 600, class: "img-icon" %>
+</div>
+</div>

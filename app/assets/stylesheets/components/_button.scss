@@ -1,0 +1,14 @@
+.btn-log {
+  color: white;
+  padding: ($padding * 2) ($padding * 6);
+  border-radius: $border-radius * 2;
+  background: $purple;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-log:hover {
+  background: $purple-hover;
+  color: white;
+  text-decoration: none;
+}

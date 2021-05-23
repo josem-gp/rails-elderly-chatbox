@@ -1,1 +1,48 @@
 // Specific CSS for your home-page
+
+.main-container {
+  position: relative;
+  box-sizing: border-box;
+  border: ($line-width * 2) solid $white;
+  margin: ($margin * 12) ($margin * 12);
+  height: 100vh;
+  border-radius: $border-radius * 16;
+  .homepage-header {
+    margin: ($margin * 12) auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+    font-weight: bold;
+    }
+  }
+  .homepage-container{
+    margin-top: ($margin * 32);
+    h1 {
+      font-weight: bold;
+      font-size: $font-size * 10;
+    }
+    p {
+      margin-top: ($margin * 8);
+      margin-bottom: ($margin * 8);
+      font-size: $font-size * 6;
+    }
+  }
+  .homepage-signup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    border-radius: $border-radius * 4;
+    width: $width * 36;
+    padding: ($padding * 2) ($padding * 4);
+    p{
+      margin: 0;
+    }
+  }
+  .img-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
