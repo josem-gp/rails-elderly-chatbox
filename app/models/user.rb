@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   ADDRESSES = %w[ Chiyoda-ku Bunkyo-ku Shinjuku-ku Shibuya-ku Minato-ku Chuo-ku Taito-ku Toshima-ku Nakano-ku
-                  Suginami-ku Setagaya-kuMeguro-ku Shinagawa-ku Ota-ku Koto-ku Edogawa-ku Sumida-ku Arakawa-ku
+                  Suginami-ku Setagaya-ku Meguro-ku Shinagawa-ku Ota-ku Koto-ku Edogawa-ku Sumida-ku Arakawa-ku
                   Katsushika-ku Nerima-ku Itamashi-ku Adachi-ku Kita-ku Musashino-shi Mitaka-shi Chofu-shi Komae-shi
                   Inagi-shi Tama-shi Fuchu-shi Koganei-shi Nishitokyo-shi Higashikurume-shi Kiyose-shi
                   Higashimurayama-shi Kodaira-shi Kokubunji-shi Kunitachi-shi Hino-shi Tachikawa-shi Higashiyamato-shi
