@@ -1,17 +1,35 @@
-<h1><%= @user.first_name %></h1>
-
-
-<h3>Messages written:</h3>
-
-<% @user.messages.each do |message| %>
-<p><%= message.content %></p>
-<% end %>
-
-
-<h3>Groups: </h3>
-<% @user.rooms.each do |room| %>
-<%= link_to room_path(room) do %>
-<p><%= room.name %></p>
-<% end %>
-<% end %>
-
+<div class="flex-container">
+  <div class="main-container">
+    <div class="container">
+      <div class="container-header">
+        <%= image_tag "avatar.jpg", alt: "Signup Form", class: "avatar-borderlg" %>
+        <h1><%= @user.first_name %></h1>
+      </div>
+      <div class = "container-infoshow">
+        <h3>Rooms: </h3>
+        <% @user.rooms.each do |room| %>
+          <%= link_to room_path(room) do %>
+            <p><%= room.name %></p>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="container-infoshow">
+        <h3>Messages written:</h3>
+        <% @user.messages.each do |message| %>
+          <p><%= message.content %></p>
+        <% end %>
+      </div>
+      <%= link_to 'Go back', root_path, class: "btn-back" %>
+    </div>
+  </div>
+  <div class="message-form">
+    <h2>Send a message</h2>
+    <div class="message-container">
+      <%= simple_form_for [@user, @message] do |f| %>
+        <%= f.input :content %>
+        <%= f.association :room, collection: Room.all, prompt: "Choose a Room" %>
+        <%= f.submit "Create a message", class: "btn-log" %>
+      <% end %>
+    </div>
+  </div>
+</div>

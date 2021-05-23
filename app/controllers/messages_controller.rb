@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to user_path(@user)
     else
-      render :new
+      render '/users/index'
     end
   end
 

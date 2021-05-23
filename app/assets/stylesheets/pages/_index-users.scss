@@ -1,6 +1,8 @@
-h1 {
+.centered-title {
   text-align: center;
   margin: ($margin * 10);
+  font-size: $font-size * 10;
+  font-weight: bold;
 }
 .container-grid {
   margin: 0 auto;

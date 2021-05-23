@@ -1,0 +1,36 @@
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  .main-container {
+    flex-grow: 2;
+    .btn-back {
+      margin: 0;
+    }
+  }
+  .message-form {
+    flex-grow: 1;
+  }
+}
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: ($margin * 4);
+  border-bottom: ($line-width) solid $line-color;
+  padding-bottom: $padding * 4;
+  h1{
+    margin-right: ($margin * 10);
+    font-size: $font-size * 10;
+    font-weight: bold;
+  }
+}
+
+.container-infoshow {
+  margin: ($margin * 4);
+  padding-bottom: $padding * 6;
+  h3{
+    font-weight: bold;
+  }
+}
+
