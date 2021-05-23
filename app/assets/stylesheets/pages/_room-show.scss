@@ -1,0 +1,12 @@
+.chat-container {
+  display: grid;
+  grid-template-columns: .9fr 5fr;
+  height: 100vh;
+}
+
+.btn-back {
+  margin: 0;
+  margin-bottom: $margin * 3;
+  margin-left: $margin * 5;
+  width: $width*11;
+}

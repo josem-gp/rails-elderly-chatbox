@@ -1,0 +1,32 @@
+
+.user-message:first-child {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 12px;
+}
+
+.user-message {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 24px;
+}
+
+.message-text{
+  margin-left: 12px;
+  margin-top: 6px;
+}
+
+.message-text h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.message-text p {
+  margin: 0;
+}
+
+.user-message img {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+}

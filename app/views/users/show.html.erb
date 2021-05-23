@@ -9,7 +9,7 @@
         <h3>Rooms: </h3>
         <div class = "rooms-infoshow">
           <% @user.rooms.each do |room| %>
-            <%= link_to "#{room.name}", room_path(room), class: "room-tag" %>
+            <%= link_to "#{room.name}", user_room_path(@user, room), class: "room-tag" %>
           <% end %>
         </div>
         <h3>Messages written:</h3>
