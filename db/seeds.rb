@@ -10,7 +10,7 @@ def cleaning_name(address)
   address.match(/(\w*)-/)[1].strip
 end
 
-puts "Creating private rooms database..."
+puts "Creating private rooms database...."
 
 addresses = User::ADDRESSES
 
