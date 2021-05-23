@@ -1,0 +1,11 @@
+h1 {
+  text-align: center;
+  margin: ($margin * 10);
+}
+.container-grid {
+  margin: 0 auto;
+  margin-top: ($margin * 20);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+

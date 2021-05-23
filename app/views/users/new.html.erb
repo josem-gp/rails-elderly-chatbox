@@ -8,8 +8,8 @@
       <%= f.input :municipality, collection: User::ADDRESSES%>
       <%= f.input :alias %>
       <%= f.submit "Sign up", class: "btn-sign" %>
+      <%= link_to 'Go back', root_path, class: "btn-back" %>
     <% end %>
-    <%= link_to 'Go back', root_path, class: "btn-log" %>
   </div>
   <%= image_tag "signup-form.png", alt: "Signup Form", width: 550, height: 550, class: "img-signup" %>
 </div>

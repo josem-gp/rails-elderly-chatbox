@@ -1,7 +1,20 @@
-<h1>Neighbours!</h1>
+<div class="main-container">
+  <div class="container">
+    <h1>Welcome to the Neighborhood</h1>
+    <div class="container-grid">
+      <div class="card-product">
+      <% @users.each do |user| %>
+        <%= link_to user_path(user) do %>
+          <%= image_tag "avatar.jpg", alt: "Signup Form", class: "avatar-borderlg" %>
+          <div class="card-product-infos">
+            <h2><%= "#{user.first_name} (#{user.alias})"%></h2>
+            <p><%= "Total messages: #{user.messages.count}"%></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    </div>
+    <%= link_to 'Go back', root_path, class: "btn-back" %>
+  </div>
+</div>
 
-<% @users.each do |user| %>
-<%= link_to user_path(user) do %>
-<p><%= user.first_name %></p>
-<% end %>
-<% end %>

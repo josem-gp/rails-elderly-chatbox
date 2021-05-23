@@ -14,6 +14,7 @@
 }
 
 .btn-sign {
+  line-height: initial;
   border: none;
   color: white;
   padding: ($padding * 1) ($padding * 3);
@@ -25,6 +26,22 @@
 
 .btn-sign:hover {
   background: $purple-hover;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-back {
+  border: none;
+  color: white;
+  padding: ($padding * 1) ($padding * 3);
+  border-radius: $border-radius * 2;
+  background: $light-gray;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-back:hover {
+  background: $gray-hover;
   color: white;
   text-decoration: none;
 }
