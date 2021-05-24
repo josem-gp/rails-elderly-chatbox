@@ -2,7 +2,7 @@
   <div class="form-container">
     <h3>Choose a room</h3>
     <%= simple_form_for [@user, @participant] do |f| %>
-      <%= f.association :room, collection: @rooms.order(:name), prompt: "Choose a Room" %>
+      <%= f.association :room, collection: @rooms, prompt: "Choose a Room" %>
       <%= link_to 'Go back', user_path(@user), class: "btn-back" %>
       <%= f.submit "Join the room", class: "btn-sign" %>
     <% end %>

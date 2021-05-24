@@ -28,7 +28,7 @@
     <div class="message-container">
       <%= simple_form_for [@user, @message] do |f| %>
         <%= f.input :content %>
-        <%= f.association :room, collection: Room.all, prompt: "Choose a Room" %>
+        <%= f.association :room, collection: @user.rooms, prompt: "Choose a Room" %>
         <%= f.submit "Create a message", class: "btn-log" %>
       <% end %>
     </div>
