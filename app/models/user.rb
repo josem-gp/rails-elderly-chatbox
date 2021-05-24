@@ -20,11 +20,19 @@ class User < ApplicationRecord
   validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 20,
                                                   less_than_or_equal_to: 100 }
   validates :municipality, presence: true, inclusion: { in: ADDRESSES }
+  after_create :create_room_assignments
   def capitalize_first
     first_name.capitalize
   end
 
   def capitalize_first
     last_name.capitalize
+  end
+
+  def create_room_assignments
+    rooms = Room.where(name: self.municipality.match(/(\w*)-/)[1].strip).or(Room.where(room_type: 'public'))
+    rooms.each do |room|
+      Participant.create(user: self, room: room)
+    end
   end
 end

@@ -11,7 +11,7 @@ class ParticipantsController < ApplicationController
     @participant = Participant.new(participant_params)
     @participant.user = @user
     if @participant.save
-      redirect_to user_room_path(@user,@room)
+      redirect_to user_room_path(@user, @room)
     else
       render :new
     end
