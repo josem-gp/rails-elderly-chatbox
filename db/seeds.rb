@@ -10,6 +10,18 @@ def cleaning_name(address)
   address.match(/(\w*)-/)[1].strip
 end
 
+puts "Delete all messages"
+
+Message.delete_all
+
+puts "Delete all participants"
+
+Participant.delete_all
+
+puts "Delete all users"
+
+User.delete_all
+
 puts "Deleting all rooms"
 
 Room.delete_all
