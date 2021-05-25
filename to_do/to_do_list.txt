@@ -1,0 +1,26 @@
+## Logic of the app
+
+- Take out the message form in the Chat.
+- Create a View for sending a message and take the "SEND THE MESSAGE" out from the :show of user.
+Link that new View in a button in the :show of user next to the "Choose a new room" button.
+- Add the user_pic to the User model.
+- Add several icons where the user that chose from during the sign-up
+- Put the chosen icon across the views that use avatar of user
+- Log in / Log out form
+- When creating a message, call map API so that the user can link the restaurant, coffee shop...
+and make a recommendation of it.
+- Upvote comments.
+- When creating a message and linking to a business (restaurant, coffee shop...), if there exists
+already a recommendation made by someone, alert the user that someone already linked the business
+and ask them to put their recommendation using that link.
+- Authorization. Only the user can edit, create, delete his/her messages.
+- Put most upvoted messages on the top of the recommendations
+
+## Design
+
+- Use the select2
+- Put the colors standardized (the purple ones) and change the grey of "back" to a darker one.
+- The layout of some pages is a mess, figure out how to make them more professional.
+- Check some JS that we can do
+- Check some plugins that we can use
+- Check how to make the chat "scroll"
