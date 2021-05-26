@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @message = Message.new
+    authorize @message
   end
 
   def create

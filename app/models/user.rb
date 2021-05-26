@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   ADDRESSES = %w[ Chiyoda-ku Bunkyo-ku Shinjuku-ku Shibuya-ku Minato-ku Chuo-ku Taito-ku Toshima-ku Nakano-ku
                   Suginami-ku Setagaya-ku Meguro-ku Shinagawa-ku Ota-ku Koto-ku Edogawa-ku Sumida-ku Arakawa-ku
                   Katsushika-ku Nerima-ku Itamashi-ku Adachi-ku Kita-ku Musashino-shi Mitaka-shi Chofu-shi Komae-shi

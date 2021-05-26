@@ -2,7 +2,7 @@
 <div class="container">
   <div class = homepage-header>
     <h2>Neighbourly</h2>
-    <%= link_to 'Sign in', users_path, class: "btn-log" %>
+    <%= link_to 'Sign in', new_user_session_path, class: "btn-log" %>
   </div>
   <div class="homepage-container">
     <h1>Where connections<br>happen.</h1>
@@ -10,7 +10,7 @@
   </div>
   <div class="homepage-signup">
     <p>Create an account</p>
-    <%= link_to 'Sign up', new_user_path, class: "btn-log" %>
+    <%= link_to 'Sign up', new_user_registration_path, class: "btn-log" %>
   </div>
   <%= image_tag "homepage-icon.png", alt: "Homepage Icon", width: 600, class: "img-icon" %>
 </div>
