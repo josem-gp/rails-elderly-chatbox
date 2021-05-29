@@ -22,6 +22,10 @@ puts "Delete all users"
 
 User.delete_all
 
+puts "Delete all icons"
+
+Icon.delete_all
+
 puts "Deleting all rooms"
 
 Room.delete_all
@@ -29,7 +33,7 @@ Room.delete_all
 puts "Creating private rooms database...."
 
 addresses = User::ADDRESSES
-
+icons = Icon::IMAGES[1..-1]
 
 puts "There are #{addresses.count} private rooms..."
 
@@ -53,5 +57,16 @@ puts "#{room[:name]} saved!"
 
 puts "General rooms created!"
 
+puts "Creating Icons"
 
+icons.each_with_index do |icon, idx|
+  Icon.create!(name: "icon#{icons[idx]}", url: "#{icon}")
+end
 
+puts "Done!"
+
+puts "Creating Trial User"
+
+user = User.new(name: 'jose garcia', age: 28, municipality: 'Chuo-ku', alias: 'josegp91', email: 'jose@hotmail.com', password: '1234567')
+user.save!
+puts "Trial User created!"

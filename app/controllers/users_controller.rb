@@ -5,7 +5,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @default_icon = Icon.find(@user.icon.id)
+    @icons = Icon.where.not(id: @default_icon)
     @message = Message.new
+    authorize @user
   end
 
   def new

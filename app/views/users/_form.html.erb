@@ -1,0 +1,4 @@
+<%= cl_image_tag(@default_icon.url, crop: :fill) %>
+<% @icons.each do |icon|  %>
+  <%= cl_image_tag(icon.url, crop: :fill) %>
+<% end %>

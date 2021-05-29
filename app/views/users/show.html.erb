@@ -3,8 +3,9 @@
   <div class="main-container">
     <div class="container">
       <div class="container-header">
-        <%= image_tag "user-icon.png", alt: "Signup Form", class: "avatar-borderlg" %>
-        <h1><%= @user.first_name %></h1>
+        <%#= cl_image_tag("Neighbourly/icon32_gfgvgk.jpg", crop: :fill) %>
+        <%= render 'modal' %>
+        <h1><%= @user.alias %></h1>
       </div>
       <div class="container-infoshow">
         <h3>Rooms: </h3>
