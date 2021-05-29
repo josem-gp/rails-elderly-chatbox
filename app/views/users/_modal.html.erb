@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <div data-toggle="modal" data-target="#formModal">
-  <%= image_tag "#{@user.icon.url}", alt: "Signup Form", class: "avatar-lg" %>
+  <%= cl_image_tag "#{@user.icon.url}", alt: "Signup Form", class: "avatar-lg" %>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">

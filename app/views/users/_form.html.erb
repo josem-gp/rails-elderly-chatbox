@@ -1,4 +1,6 @@
 <%= cl_image_tag(@default_icon.url, crop: :fill) %>
 <% @icons.each do |icon|  %>
-  <%= cl_image_tag(icon.url, crop: :fill) %>
+  <%= link_to user_path(@user, :icon_id => icon.id), method: :put do %>
+    <% cl_image_tag(icon.url, crop: :fill) %>
+  <% end %>
 <% end %>

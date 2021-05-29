@@ -60,7 +60,7 @@ puts "General rooms created!"
 puts "Creating Icons"
 
 icons.each_with_index do |icon, idx|
-  Icon.create!(name: "icon#{icons[idx]}", url: "#{icon}")
+  Icon.create!(name: "icon#{idx}", url: "#{icon}")
 end
 
 puts "Done!"

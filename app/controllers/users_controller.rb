@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.last(8)
-  end
-
   def show
     @user = User.find(params[:id])
     @default_icon = Icon.find(@user.icon.id)
@@ -11,22 +7,17 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def new
-    @user = User.new
+  def edit
+    @user = User.find(params[:id])
+    authorize @user
   end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :age, :municipality, :alias)
+  def update
+    @user = User.find(params[:id])
+    @icon = Icon.find(params[:icon_id])
+    @user.icon = @icon
+    @user.update(icon: @icon)
+    redirect_to user_path(@user)
+    authorize @user
   end
 end
