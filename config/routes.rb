@@ -7,5 +7,4 @@ Rails.application.routes.draw do
     resources :participants, only: [:new, :create]
     resources :rooms, only: [:show]
   end
-  resources :icons, only: [:index, :edit, :update]
 end
