@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :participants, only: [:new, :create]
     resources :rooms, only: [:show]
   end
+  resources :participants, only: [:destroy]
 end

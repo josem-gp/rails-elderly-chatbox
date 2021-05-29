@@ -19,6 +19,15 @@ class ParticipantsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @room = Room.find(params[:room_id])
+    @participant = Participant.find_by(user: @user, room: @room)
+    @participant.destroy
+    authorize @participant
+    redirect_to user_path(@user)
+  end
+
   private
 
   def participant_params

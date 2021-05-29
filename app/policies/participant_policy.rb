@@ -8,4 +8,8 @@ class ParticipantPolicy < ApplicationPolicy
   def create?
     record.user = user
   end
+
+  def destroy?
+    true
+  end
 end

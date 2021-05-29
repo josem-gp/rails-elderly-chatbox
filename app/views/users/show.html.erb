@@ -12,6 +12,11 @@
         <div class = "rooms-infoshow">
           <% @user.rooms.each do |room| %>
             <%= link_to "#{room.name}", user_room_path(@user, room), class: "room-tag" %>
+            <%= link_to "Remove",
+                  participant_path(:room_id => room.id),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }
+                   %>
           <% end %>
         </div>
         <h3>Messages written:</h3>
