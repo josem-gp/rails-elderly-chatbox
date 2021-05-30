@@ -8,13 +8,9 @@ const selectShop = () => {
       event.preventDefault();
       const fullId = event.currentTarget.id;
       const id = fullId.match(/(marker-shop-)(\d)/)[2];
-      return id;
+      console.log(id);
     })
   });
 }
 
-const addToForm = (val) => {
-  form.insertAdjacentHTML("beforeend", '');
-}
-
-export { selectShop, addToForm };
+export { selectShop};

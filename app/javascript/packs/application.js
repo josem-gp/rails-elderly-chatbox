@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
-import { selectShop, addToForm } from '../components/init_selectShop';
+import { selectShop } from '../components/init_selectShop';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -35,5 +35,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
     initSelect2();
     initMapbox();
-    addToForm(selectShop);
+    selectShop();
 });
