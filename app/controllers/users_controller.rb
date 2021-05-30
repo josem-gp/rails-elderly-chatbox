@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @markers = @shops.geocoded.map do |shop|
       {
         lat: shop.latitude,
-        lng: shop.longitude
+        lng: shop.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { shop: shop }),
+        marker: render_to_string(partial: "marker", locals: { shop: shop })
       }
     end
     authorize @user
