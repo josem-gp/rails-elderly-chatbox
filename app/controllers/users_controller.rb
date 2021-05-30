@@ -4,6 +4,13 @@ class UsersController < ApplicationController
     @default_icon = Icon.find(@user.icon.id)
     @icons = Icon.where.not(id: @default_icon)
     @message = Message.new
+    @shops = Shop.all
+    @markers = @shops.geocoded.map do |shop|
+      {
+        lat: shop.latitude,
+        lng: shop.longitude
+      }
+    end
     authorize @user
   end
 
