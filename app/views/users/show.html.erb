@@ -9,7 +9,7 @@
       <div class="container-infoshow">
         <h3>Rooms: </h3>
         <div class = "rooms-infoshow">
-          <% @user.rooms.each do |room| %>
+          <% @user.rooms.order("name asc").each do |room| %>
             <%= link_to "#{room.name}", user_room_path(@user, room), class: "room-tag" %>
             <%= link_to "Remove",
                   participant_path(:room_id => room.id),
@@ -26,16 +26,7 @@
         </div>
       </div>
       <%= link_to 'Choose a new Room', new_user_participant_path(@user), class: "btn-sign" %>
-    </div>
-  </div>
-  <div class="message-form">
-    <h2>Send a message</h2>
-    <div class="message-container">
-      <%= simple_form_for [@user, @message] do |f| %>
-        <%= f.input :content %>
-        <%= f.association :room, collection: @user.rooms, prompt: "Choose a Room" %>
-        <%= f.submit "Create a message", class: "btn-log" %>
-      <% end %>
+      <%= render 'messages/modal' %>
     </div>
   </div>
 </div>

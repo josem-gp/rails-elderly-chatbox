@@ -3,9 +3,9 @@ class MessagePolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def create?
-      record.user = user
-    end
+  def create?
+    true
   end
 end

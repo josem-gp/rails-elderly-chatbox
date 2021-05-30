@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user = @user
     @message.room = @room
+    authorize @message
     if @message.save
       redirect_to user_path(@user)
     else
