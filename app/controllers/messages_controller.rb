@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to user_path(@user)
     else
-      render '/users/index'
+      redirect_to user_path(@user) # add an alert to this so the user knows they can't create a message without a shop instance
     end
   end
 

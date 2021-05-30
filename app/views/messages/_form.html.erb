@@ -5,6 +5,8 @@
 </div>
 <div class="message-form">
   <div class="message-container">
+    <div class = "shop-show">
+    </div>
     <%= simple_form_for [@user, @message] do |f| %>
       <%= f.input :content %>
       <%= f.association :room, collection: @user.rooms.order("name asc"), prompt: "Choose a Room" %>
