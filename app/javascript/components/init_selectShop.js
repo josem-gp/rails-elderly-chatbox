@@ -1,14 +1,13 @@
 console.log("Hi there 3!");
 
-const form = document.querySelector('.shop-show');
-
 const selectShop = () => {
+  const form = document.querySelector('.hidden > input');
   document.querySelectorAll('.marker').forEach((shop) => {
     shop.addEventListener('click', (event) => {
       event.preventDefault();
       const fullId = event.currentTarget.id;
       const id = fullId.match(/(marker-shop-)(\d)/)[2];
-      console.log(id);
+      form.value = id;
     })
   });
 }

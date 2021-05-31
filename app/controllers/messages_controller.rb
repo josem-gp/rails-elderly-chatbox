@@ -6,11 +6,9 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @room = Room.find(params[:message][:room_id])
+    @user = current_user
     @message = Message.new(message_params)
     @message.user = @user
-    @message.room = @room
     authorize @message
     if @message.save
       redirect_to user_path(@user)
@@ -22,6 +20,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content)
+    params.require(:message).permit(:content, :room_id, :shop_id)
   end
 end

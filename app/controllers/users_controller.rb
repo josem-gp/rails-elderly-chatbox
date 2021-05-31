@@ -22,10 +22,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     @icon = Icon.find(params[:icon_id])
-    # @user.icon = @icon
-    # @user.update(icon: @icon)
+    @user.icon = @icon
+    @user.save
     redirect_to user_path(@user)
     authorize @user
   end

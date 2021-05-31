@@ -14,13 +14,14 @@ class User < ApplicationRecord
   has_many :messages
   has_many :participants
   has_many :rooms, through: :participants
+  has_one_attached :photo
   validates :alias, presence: true, length: { in: 3..12 },
     uniqueness: { message: "this alias is being used by another user", case_sensitive: false }
   validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 20,
                                                   less_than_or_equal_to: 100 }
   validates :name, presence: true
   validates :municipality, presence: true, inclusion: { in: ADDRESSES }
-  before_validation :add_default_icon
+  before_validation :add_default_icon, on: :create
   after_create :create_room_assignments
   def capitalize_first
     name.capitalize
