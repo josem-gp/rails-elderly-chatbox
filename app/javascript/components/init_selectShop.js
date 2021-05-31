@@ -1,4 +1,3 @@
-console.log("Hi there 3!");
 
 const selectShop = () => {
   const form = document.querySelector('.hidden > input');
