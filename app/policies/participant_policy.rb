@@ -6,10 +6,10 @@ class ParticipantPolicy < ApplicationPolicy
   end
 
   def create?
-    record.user = user
+    true
   end
 
   def destroy?
-    true
+    record.user == user
   end
 end
