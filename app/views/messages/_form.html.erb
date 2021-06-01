@@ -7,7 +7,6 @@
   <div class="message-container">
     <div class = "shop-show"></div>
     <%= simple_form_for [@user, @message] do |f| %>
-      <%= f.input :content %>
       <%= f.association :room, collection: @user.rooms.order("name asc"), prompt: "Choose a Room" %>
       <%= f.input :shop_id, as: :hidden %>
       <%= f.submit "Create a message", class: "btn-log" %>
