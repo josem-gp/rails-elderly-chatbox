@@ -10,6 +10,7 @@ class UsersController < ApplicationController
         lat: shop.latitude,
         lng: shop.longitude,
         info_window: render_to_string(partial: "info_window", locals: { shop: shop }),
+        id: shop.id,
         marker: render_to_string(partial: "marker", locals: { shop: shop })
       }
     end

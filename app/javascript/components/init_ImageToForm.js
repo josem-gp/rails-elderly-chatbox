@@ -4,6 +4,8 @@ const AddImageToForm = () => {
   const imgContainer = document.querySelector('.shop-show');
   document.querySelectorAll('.marker').forEach((markup) => {
     markup.addEventListener('click', (event) => {
+      const markers = JSON.parse(document.getElementById('map').dataset.markers);
+      console.log(markers)
       event.preventDefault();
       const markupImg = document.querySelector('.mapboxgl-popup-content').innerHTML.split('\n')[0];
       if (imgContainer.innerHTML === "") {
