@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @default_icon = Icon.find(@user.icon.id)
     @icons = Icon.where.not(id: @default_icon)
+    @event = Event.new
     @message = Message.new
     @shops = Shop.all
     @markers = @shops.geocoded.map do |shop|

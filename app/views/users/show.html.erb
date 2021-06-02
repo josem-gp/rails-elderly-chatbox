@@ -18,6 +18,12 @@
                    %>
           <% end %>
         </div>
+        <h3>Recommendations written:</h3>
+        <div class="messages-infoshow">
+          <% @user.events.each do |event| %>
+            <p><%= event.content %></p>
+          <% end %>
+        </div>
         <h3>Messages written:</h3>
         <div class="messages-infoshow">
           <% @user.messages.each do |message| %>
@@ -27,6 +33,7 @@
       </div>
       <%= link_to 'Choose a new Room', new_user_participant_path(@user), class: "btn-sign" %>
       <%= render 'messages/modal' %>
+      <%= render 'events/modal' %>
     </div>
   </div>
 </div>

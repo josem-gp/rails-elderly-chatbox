@@ -1,21 +1,21 @@
 <!-- Button trigger modal -->
 <div class = "container d-flex justify-content-end">
-  <button type="button" class="btn-gradient mt-4" data-toggle="modal" data-target="#formModalMessage">
-    Submit a recommendation
+  <button type="button" class="btn-gradient mt-4" data-toggle="modal" data-target="#formModalMessage1">
+    Submit a message
   </button>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="formModalMessage" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+<div class="modal fade" id="formModalMessage1" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="formModalLabel">New Recommendation</h5>
+        <h5 class="modal-title" id="formModalLabel1">New Message</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <%= render 'messages/form' %>
+        <%= render 'events/form' %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn-black" data-dismiss="modal">Close</button>

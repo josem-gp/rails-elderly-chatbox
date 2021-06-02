@@ -12,6 +12,7 @@ class User < ApplicationRecord
                   Okutama-machi Hinohara-mura Hachioji-shi Machida-shi].sort
   belongs_to :icon
   has_many :messages
+  has_many :events
   has_many :participants
   has_many :rooms, through: :participants
   has_one_attached :photo
