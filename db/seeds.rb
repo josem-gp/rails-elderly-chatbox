@@ -12,6 +12,9 @@ def cleaning_name(address)
   address.match(/(\w*)-/)[1].strip
 end
 
+puts "Delete all events"
+
+Events.delete_all
 
 puts "Delete all messages"
 
@@ -72,11 +75,15 @@ end
 
 puts "Done!"
 
-puts "Creating Trial User"
+puts "Creating Trial Users"
 
 user = User.new(name: 'jose garcia', age: 28, municipality: 'Chuo-ku', alias: 'josegp91', email: 'jose@hotmail.com', password: '1234567')
 user.save!
-puts "Trial User created!"
+
+user = User.new(name: 'doug', age: 28, municipality: 'Chuo-ku', alias: 'doug', email: 'doug@hotmail.com', password: '1234567')
+user.save!
+
+puts "Trial Users created!"
 
 
 puts "Creating Trial Shops"

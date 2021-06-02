@@ -1,0 +1,15 @@
+<% @room.messages.each do |message| %>
+  <div class="user-message">
+    <%= cl_image_tag message.user.icon.url, alt: "User icon", class: "avatar" %>
+    <div class = "message-text">
+      <%= cl_image_tag message.shop.photos.first.key, height: 200, width: 200, crop: :fill %>
+      <h3><%= message.user.alias %></h3>
+      <p><%= message.content %></p>
+      <%= link_to "Remove",
+                  user_message_path(@user,message),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }
+                   %>
+    </div>
+  </div>
+<% end %>

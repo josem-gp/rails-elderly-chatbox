@@ -3,7 +3,7 @@
     <div class = "shop-show"></div>
     <%= simple_form_for [@user, @event] do |f| %>
       <%= f.input :content %>
-      <%= f.association :room, collection: current_user.rooms.order("name asc"), prompt: "Choose a Room" %>
+      <%= f.association :room, collection: current_user.rooms.where(room_type: 'public').order("name asc"), prompt: "Choose a Room" %>
       <%= f.submit "Create a message", class: "btn-log" %>
     <% end %>
   </div>
