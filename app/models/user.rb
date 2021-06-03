@@ -36,7 +36,7 @@ class User < ApplicationRecord
   end
 
   def add_default_icon
-    default_icon = Icon.create!(name: "default_icon", url: Icon::IMAGES[0])
+    default_icon = Icon.find_by(name: 'default_icon')
     self.icon = default_icon
   end
 end

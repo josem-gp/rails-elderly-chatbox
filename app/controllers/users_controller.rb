@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @default_icon = Icon.find(@user.icon.id)
-    @icons = Icon.where.not(id: @default_icon)
+    @icons = Icon.where.not(id: @default_icon).order('name DESC')
     @event = Event.new
     @message = Message.new
     @shops = Shop.all

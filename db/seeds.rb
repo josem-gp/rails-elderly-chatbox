@@ -14,7 +14,7 @@ end
 
 puts "Delete all events"
 
-Events.delete_all
+Event.delete_all
 
 puts "Delete all messages"
 
@@ -43,7 +43,9 @@ Room.delete_all
 puts "Creating private rooms database...."
 
 addresses = User::ADDRESSES
+default_icon = Icon::IMAGES[0]
 icons = Icon::IMAGES[1..-1]
+
 
 puts "There are #{addresses.count} private rooms..."
 
@@ -69,8 +71,10 @@ puts "General rooms created!"
 
 puts "Creating Icons"
 
+Icon.create!(name: "default_icon", url: default_icon)
+
 icons.each_with_index do |icon, idx|
-  Icon.create!(name: "icon#{idx}", url: "#{icon}")
+  Icon.create!(name: "icon#{idx}", url: icon)
 end
 
 puts "Done!"
