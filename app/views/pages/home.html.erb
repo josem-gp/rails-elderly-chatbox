@@ -1,7 +1,10 @@
 <div class="main-container">
   <div class="sub-container">
     <div class = homepage-header>
-      <h2>Neighbourly</h2>
+      <div class="title-header">
+        <%= image_tag "logo.png", alt: "Logo", class: "logo" %>
+        <h2>Neighbourly</h2>
+      </div>
       <%= link_to 'Sign in', new_user_session_path, class: "btn-log" %>
     </div>
     <div class="homepage-container">

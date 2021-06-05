@@ -20,6 +20,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .title-header {
+      display: flex;
+      align-items: flex-end;
+    }
     h2 {
     font-weight: bold;
     }

@@ -22,3 +22,10 @@
 .avatar-lg{
   width: $width * 14;
 }
+
+.logo {
+  width: $width * 6;
+  border: $purple 2px solid;
+  border-radius: 50%;
+  margin-right: $margin * 2;
+}
