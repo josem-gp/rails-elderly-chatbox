@@ -2,10 +2,11 @@
 // Sign up & Sign in form
 
 .main-form{
+  background-color: white;
   display: flex;
   height: 100vh;
   .form-container {
-    width: 30%;
+    width: 35%;
     margin: auto 0;
     margin-left: $margin * 8;
     .centered-container{
@@ -67,6 +68,14 @@
   }
 }
 
+.image-container{
+  width: 65%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 
 // Message form
 
