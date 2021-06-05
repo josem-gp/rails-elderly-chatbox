@@ -9,13 +9,24 @@
     margin: auto 0;
     margin-left: $margin * 8;
     .centered-container{
-      h2{
+      h1{
         font-weight: bold;
         color: $purple;
         margin: ($margin * 2) ($margin * 4);
       }
       form {
         margin:($margin * 6) ($margin * 4);
+      }
+      p {
+        margin: ($margin * 2) ($margin * 4);
+        a {
+          text-decoration: none;
+          color: $purple;
+          font-weight: bold;
+        }
+        a:hover{
+          color: $purple-hover;
+        }
       }
     }
   }
@@ -40,20 +51,22 @@
   }
 }
 
-
-
-.button {
-  border: none;
-  background: $purple;
-  border-radius: $border-radius * 2;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: $padding ($padding * 3);
+.form-actions {
+  input{
+    color: white;
+    width: 100%;
+    background: $purple;
+    border-radius: $border-radius * 2;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: $padding;
+    text-align: center;
+  }
+  input:hover{
+    color: white;
+    background: $purple-hover;
+  }
 }
 
-#sign {
-  color: white;
-  font-size: $font-size * 4;
-}
 
 // Message form
 
