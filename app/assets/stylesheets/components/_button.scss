@@ -30,18 +30,25 @@
   text-decoration: none;
 }
 
-.btn-back {
-  border: none;
-  color: white;
-  padding: ($padding * 1) ($padding * 3);
-  border-radius: $border-radius * 2;
-  background: $light-gray;
-  text-decoration: none;
-  transition: background 0.3s ease;
+// back-button
+
+a{
+  .back-button{
+    color: $gray-back;
+    margin-right: $margin * 2;
+  }
+  p{
+    text-decoration: none;
+    color: $gray-back;
+  }
 }
 
-.btn-back:hover {
-  background: $gray-hover;
-  color: white;
+a:hover {
   text-decoration: none;
+  .back-button{
+    color: $gray-hover;
+  }
+  p{
+    color: $gray-hover;
+  }
 }

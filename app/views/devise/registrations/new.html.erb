@@ -31,9 +31,14 @@
         </div>
       <% end %>
       <p>Already have an account? <%= render "devise/shared/links" %></p>
+      <div class="back">
+        <%= link_to root_path do %>
+          <p><i class="fas fa-chevron-circle-left back-button"></i>Back</p>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="image-container">
+  <div class="image-container-signup">
     <%= image_tag "signup.jpg", alt: "Signup Form"%>
   </div>
 </div>

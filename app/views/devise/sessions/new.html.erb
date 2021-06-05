@@ -1,20 +1,31 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
+<div class="main-form">
+  <div class="form-container">
+    <div class="centered-container">
+      <h1>Get Started!</h1>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
+          <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in" %>
+        </div>
+      <% end %>
+      <p>Don't have an account? <%= render "devise/shared/links" %></p>
+      <div class="back">
+        <%= link_to root_path do %>
+          <p><i class="fas fa-chevron-circle-left back-button"></i>Back</p>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="image-container-login">
+    <%= image_tag "login.jpg", alt: "Signup Form"%>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
