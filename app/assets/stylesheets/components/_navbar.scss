@@ -8,5 +8,8 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: $width * 6;
+  border: #6069E8 2px solid;
+  border-radius: 50%;
 }
+
