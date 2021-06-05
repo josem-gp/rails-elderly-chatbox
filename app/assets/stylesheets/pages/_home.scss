@@ -2,13 +2,17 @@
 
 .main-container {
   position: relative;
-  box-sizing: border-box;
   border: ($line-width * 2) solid $white;
   margin: ($margin * 12) ($margin * 12);
-  height: 100vh;
+  padding-top: $padding * 14;
+  padding-bottom: $padding * 14;
+  // height: 100vh;
   border-radius: $border-radius * 16;
+}
+.sub-container{
+  margin-left: $margin * 13;
+  margin-right: $margin * 13;
   .homepage-header {
-    margin: ($margin * 12) auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
