@@ -1,24 +1,61 @@
 
+// Sign up & Sign in form
+
 .main-form{
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  height: 100vh;
   .form-container {
-    box-sizing: border-box;
-    border: ($line-width * 2) solid $white;
-    margin: ($margin * 8) ($margin * 12);
-    border-radius: $border-radius * 16;
-    padding: $padding * 12;
     width: 30%;
-    h3{
-      text-align: center;
-      font-weight: bold;
-    }
-    form {
-      margin:($margin * 8) ($margin * 4);
+    margin: auto 0;
+    margin-left: $margin * 8;
+    .centered-container{
+      h2{
+        font-weight: bold;
+        color: $purple;
+        margin: ($margin * 2) ($margin * 4);
+      }
+      form {
+        margin:($margin * 6) ($margin * 4);
+      }
     }
   }
 }
+
+.form-inputs {
+  .form-control {
+  border-radius: $border-radius * 3;
+  }
+  .form-flex {
+    display: flex;
+    justify-content: space-between;
+    .form-group {
+      flex-grow: 1;
+    }
+    .user_name {
+      margin-right: $margin;
+    }
+    .user_alias {
+      margin-left: $margin;
+    }
+  }
+}
+
+
+
+.button {
+  border: none;
+  background: $purple;
+  border-radius: $border-radius * 2;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: $padding ($padding * 3);
+}
+
+#sign {
+  color: white;
+  font-size: $font-size * 4;
+}
+
+// Message form
 
 .message-form{
   box-sizing: border-box;
