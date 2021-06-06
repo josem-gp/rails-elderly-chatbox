@@ -1,16 +1,37 @@
+.cont-grid {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+}
+
 .container-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
   margin: ($margin * 4);
-  border-bottom: ($line-width) solid $line-color;
   padding-bottom: $padding * 4;
-  h1{
-    margin-right: ($margin * 10);
-    font-size: $font-size * 10;
-    font-weight: bold;
+  .user-name-container{
+    margin-left: 28%;
+    h3{
+      font-weight: bold;
+      font-size: $font-size * 4.5;
+    }
   }
 }
+
+.modal-icon {
+  position: relative;
+  img {
+    margin-left: 20%;
+  }
+  .add-sign {
+    color: $purple-tag;
+    position: absolute;
+    font-size: $font-size * 5;
+    bottom: 12px;
+  }
+  .add-sign:hover {
+    color: $purple;
+  }
+}
+
 
 .container-infoshow {
   margin: ($margin * 4);

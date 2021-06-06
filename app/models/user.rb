@@ -21,9 +21,10 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :municipality, presence: true, inclusion: { in: ADDRESSES }
   before_validation :add_default_icon, on: :create
+  before_create :capitalize_first
   after_create :create_room_assignments
   def capitalize_first
-    name.capitalize
+    name.split.map(&:capitalize).join(' ')
   end
 
   def create_room_assignments
