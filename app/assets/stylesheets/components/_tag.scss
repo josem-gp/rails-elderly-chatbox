@@ -1,4 +1,7 @@
 .room-tag {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
   background-color: $purple-tag;
   text-decoration: none;
   color: white;

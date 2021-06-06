@@ -1,7 +1,12 @@
+//grid
+
 .show-grid {
   display: grid;
-  grid-template-columns: 2fr 5fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 89vh;
 }
+
+//1st grid (icon - actions)
 
 .container-header {
   position: relative;
@@ -16,11 +21,32 @@
   }
 }
 
-
-#profile-tag {
-
+.actions{
+  margin-top: $margin * 6;
+  .main-action{
+    font-size: $font-size * 3;
+    // font-weight: bold;
+  }
+  .profile-actions{
+    display: flex;
+    flex-direction: column;
+    height: 98px;
+    justify-content: space-around;
+    margin-left: 4px;
+    .action-btn{
+      color: $line-color;
+    }
+    .action-btn:hover {
+      color: $gray-hover;
+    }
+    a{
+      color: $line-color;
+    }
+    a:hover {
+      color: $gray-hover;
+    }
+  }
 }
-
 
 .modal-icon {
   position: relative;
@@ -39,23 +65,53 @@
 }
 
 
+//2nd container - infoshow
+
 .container-infoshow {
   margin: ($margin * 4);
   padding-bottom: $padding * 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h3{
     font-weight: bold;
   }
 }
 
-.rooms-infoshow {
-  display: flex;
-}
-
 .messages-infoshow {
+  border-radius: $border-radius * 2;
+  margin-top: $margin * 6;
+  background-color: white;
+  width: 90%;
+  height: 80%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   p{
     overflow: hidden;
-    background-color: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
     padding: $padding * 2;
+    color: $gray-hover;
   }
+}
+
+//3rd container - rooms
+.rooms-infoshow{
+  margin: ($margin * 4);
+  padding-bottom: $padding * 6;
+}
+.room-container {
+  border-radius: $border-radius * 2;
+  margin-top: $margin * 6;
+  width: 90%;
+  height: 96%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  p{
+    padding: $padding * 2;
+    color: $gray-hover;
+  }
+}
+
+.room-tags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
