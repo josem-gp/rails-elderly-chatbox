@@ -1,39 +1,33 @@
 <%= render 'shared/navbar' %>
-<div class="flex-container">
-  <div class="main-container">
-    <div class="container">
-      <div class="container-header">
-        <%= render 'modal' %>
-        <h1><%= @user.alias %></h1>
-      </div>
-      <div class="container-infoshow">
-        <h3>Rooms: </h3>
-        <div class = "rooms-infoshow">
-          <% @user.rooms.order("name asc").each do |room| %>
-            <%= link_to "#{room.name}", user_room_path(@user, room), class: "room-tag" %>
-            <%= link_to "Remove",
+<div class="container-header">
+  <%= render 'modal' %>
+  <h1><%= @user.alias %></h1>
+</div>
+<div class="container-infoshow">
+  <h3>Rooms: </h3>
+  <div class = "rooms-infoshow">
+    <% @user.rooms.order("name asc").each do |room| %>
+      <%= link_to "#{room.name}", user_room_path(@user, room), class: "room-tag" %>
+      <%= link_to "Remove",
                   participant_path(:room_id => room.id),
                   method: :delete,
                   data: { confirm: "Are you sure?" }
                    %>
-          <% end %>
-        </div>
-        <h3>Recommendations written:</h3>
-        <div class="messages-infoshow">
-          <% @user.events.each do |event| %>
-            <p><%= event.content %></p>
-          <% end %>
-        </div>
-        <h3>Messages written:</h3>
-        <div class="messages-infoshow">
-          <% @user.messages.each do |message| %>
-            <p><%= message.content %></p>
-          <% end %>
-        </div>
-      </div>
-      <%= link_to 'Choose a new Room', new_user_participant_path(@user), class: "btn-sign" %>
-      <%= render 'messages/modal' %>
-      <%= render 'events/modal' %>
-    </div>
+    <% end %>
+  </div>
+  <h3>Recommendations written:</h3>
+  <div class="messages-infoshow">
+    <% @user.events.each do |event| %>
+      <p><%= event.content %></p>
+    <% end %>
+  </div>
+  <h3>Messages written:</h3>
+  <div class="messages-infoshow">
+    <% @user.messages.each do |message| %>
+      <p><%= message.content %></p>
+    <% end %>
   </div>
 </div>
+<%= link_to 'Choose a new Room', new_user_participant_path(@user), class: "btn-sign" %>
+<%= render 'messages/modal' %>
+<%= render 'events/modal' %>
