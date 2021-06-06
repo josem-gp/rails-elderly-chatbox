@@ -87,3 +87,27 @@
     object-size: cover;
   }
 }
+
+
+// Message & Events form
+
+.modal-header {
+  background-color: white;
+}
+
+.modal-body {
+  background-color: white;
+  .shop-show{
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px;
+    img {
+      border-radius: 8px;
+    }
+  }
+}
+
+.modal-footer {
+  background-color: white;
+}
+
