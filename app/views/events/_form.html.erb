@@ -4,7 +4,7 @@
     <%= simple_form_for [@user, @event] do |f| %>
       <%= f.input :content %>
       <%= f.association :room, collection: current_user.rooms.where(room_type: 'public').order("name asc"), prompt: "Choose a Room" %>
-      <%= f.submit "Create a message", class: "btn-log" %>
+      <%= f.submit "Create it!", class: "btn-log" %>
     <% end %>
   </div>
 </div>

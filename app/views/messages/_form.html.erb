@@ -10,7 +10,7 @@
       <%= f.input :content %>
       <%= f.association :room, collection: current_user.rooms.where(room_type: 'private').order("name asc"), prompt: "Choose a Room" %>
       <%= f.input :shop_id, as: :hidden %>
-      <%= f.submit "Create a message", class: "btn-log" %>
+      <%= f.submit "Recommend it!", class: "btn-log" %>
     <% end %>
   </div>
 </div>
