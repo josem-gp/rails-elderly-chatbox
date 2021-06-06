@@ -1,17 +1,33 @@
 .room-tag {
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  background-color: $purple-tag;
+  position: relative;
+  width: 60%;
   text-decoration: none;
-  color: white;
   padding: ($padding * 2) ($padding * 6);
-  border-radius: $border-radius * 2;
+  border-radius: $border-radius * 4;
   margin: $margin * 3;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all .2s ease-in-out;
+  p {
+    color: $gray;
+    margin-left: $margin * 4;
+  }
+  .del-icon{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: $font-size * 2.2;
+    color: $line-color;
+  }
+  .enter-icon{
+    position: absolute;
+    right: 8px;
+    top: 25%;
+    color: $purple;
+  }
 }
 
 .room-tag:hover {
-  background-color: $purple;
-  color:white;
   text-decoration: none;
+  transform: scale(1.15);
 }

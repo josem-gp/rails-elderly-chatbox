@@ -34,13 +34,13 @@
     justify-content: space-around;
     margin-left: 4px;
     .action-btn{
-      color: $line-color;
+      color: $gray-back;
     }
     .action-btn:hover {
       color: $gray-hover;
     }
     a{
-      color: $line-color;
+      color: $gray-back;
     }
     a:hover {
       color: $gray-hover;
@@ -102,9 +102,7 @@
   margin-top: $margin * 6;
   width: 90%;
   height: 96%;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  p{
+  #cont-title{
     padding: $padding * 2;
     color: $gray-hover;
   }
@@ -113,5 +111,5 @@
 .room-tags {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }

@@ -31,16 +31,16 @@
   </div>
   <div class = "rooms-infoshow">
     <div class="room-container">
-      <p>Rooms</p>
+      <p id="cont-title">Rooms</p>
       <div class="room-tags">
         <% @user.rooms.order("name asc").each do |room| %>
           <div class="room-tag">
             <%= link_to participant_path(:room_id => room.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="fas fa-trash-alt"></i>
+              <i class="fas fa-trash-alt del-icon"></i>
             <% end %>
             <p><%= room.name %></p>
             <%= link_to user_room_path(@user, room) do %>
-              <i class="fas fa-external-link-alt"></i>
+              <i class="fas fa-external-link-alt enter-icon"></i>
             <% end %>
           </div>
         <% end %>
