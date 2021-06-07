@@ -13,11 +13,15 @@ const selectShop = () => {
       const markers = JSON.parse(document.getElementById('map').dataset.markers);
       const marker = markers.find(marker => marker.id == id);
       const markerImg = marker.info_window.split('\n')[0];
+      const markerTitle = marker.info_window.split('\n')[1];
       if (imgContainer.innerHTML === "") {
         imgContainer.insertAdjacentHTML('beforeend', markerImg);
+        imgContainer.insertAdjacentHTML('beforeend', markerTitle);
       } else {
         imgContainer.firstElementChild.remove();
+        imgContainer.firstElementChild.remove();
         imgContainer.insertAdjacentHTML('beforeend', markerImg);
+        imgContainer.insertAdjacentHTML('beforeend', markerTitle);
       }
     })
   });

@@ -16,12 +16,16 @@
     </div>
   </div>
   <div class="container-infoshow">
+    <div class="infoshow-title">
+      <h2>Your activity in the Neighbourhood</h2>
+    </div>
     <div class="messages-infoshow">
-      <p class="message-title">Recommendations...</p>
+      <p class="message-title">Recommendations</p>
       <% @user.messages.each do |message| %>
         <div class="recommendation">
           <%= cl_image_tag message.shop.photos.first.key, height: 100, width: 100, crop: :fill %>
           <div class="recommendation-text">
+            <p class="rest-name"><%= message.shop.name %></p>
             <p class="content"><%= message.content %></p>
             <p class="room"><%= message.room.name %></p>
           </div>
@@ -29,7 +33,7 @@
       <% end %>
     </div>
     <div class="messages-infoshow">
-      <p class="message-title">Messages...</p>
+      <p class="message-title">Messages</p>
       <% @user.events.each do |event| %>
         <div class="message">
           <p class="content"><%= event.content %></p>
