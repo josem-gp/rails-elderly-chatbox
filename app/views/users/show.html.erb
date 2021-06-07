@@ -18,14 +18,20 @@
   <div class="container-infoshow">
     <div class="messages-infoshow">
       <p>Recommendations...</p>
-      <% @user.events.each do |event| %>
-        <p><%= event.content %></p>
+      <% @user.messages.each do |message| %>
+        <div class="message">
+          <p class="content"><%= message.content %></p>
+          <p class="room"><%= message.room.name %></p>
+        </div>
       <% end %>
     </div>
     <div class="messages-infoshow">
       <p>Messages...</p>
-      <% @user.messages.each do |message| %>
-        <p><%= message.content %></p>
+      <% @user.events.each do |event| %>
+        <div class="message">
+          <p class="content"><%= event.content %></p>
+          <p class="room"><%= event.room.name %></p>
+        </div>
       <% end %>
     </div>
   </div>

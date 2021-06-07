@@ -34,16 +34,16 @@
     justify-content: space-around;
     margin-left: 4px;
     .action-btn{
-      color: $gray-back;
+      color: $gray-letters;
     }
     .action-btn:hover {
-      color: $gray-hover;
+      color: $gray-letters-hover;
     }
     a{
-      color: $gray-back;
+      color: $gray-letters;
     }
     a:hover {
-      color: $gray-hover;
+      color: $gray-letters-hover;
     }
   }
 }
@@ -88,8 +88,33 @@
   p{
     overflow: hidden;
     padding: $padding * 2;
-    color: $gray-hover;
+    color: $gray-letters;
+    margin: $margin * 2;
   }
+}
+
+.message {
+  margin: ($margin * 4) ($margin * 6);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: $border-radius * 2;
+  p{
+    padding: 0;
+    margin: 0;
+  }
+  .content {
+    color: $gray;
+    margin-left: $margin * 2;
+  }
+  .room {
+    color: $gray-hover;
+    margin-left: $margin * 4;
+    font-style: italic
+  }
+}
+
+.message:hover {
+  transform:scale(1.03);
+  transform-origin:left center;
 }
 
 //3rd container - rooms
@@ -104,7 +129,7 @@
   height: 96%;
   #cont-title{
     padding: $padding * 2;
-    color: $gray-hover;
+    color: $gray-letters;
   }
 }
 
