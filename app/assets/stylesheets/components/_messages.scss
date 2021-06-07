@@ -30,3 +30,65 @@
   height: 48px;
   border-radius: 4px;
 }
+
+// message - events
+
+.message {
+  margin: ($margin * 4) ($margin * 6);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: $border-radius * 2;
+  p{
+    padding: 0;
+    margin: 0;
+  }
+  .content {
+    color: $gray;
+    margin-left: $margin * 2;
+  }
+  .room {
+    color: $gray-hover;
+    margin-left: $margin * 4;
+    font-style: italic
+  }
+}
+
+.message:hover {
+  transform:scale(1.03);
+  transform-origin:left center;
+}
+
+
+// message - recommendations
+
+.recommendation {
+  display: flex;
+  align-items: center;
+  margin: ($margin * 4) ($margin * 6);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: $border-radius * 2;
+  img {
+    border-top-left-radius: $border-radius * 2;
+    border-bottom-left-radius: $border-radius * 2;
+  }
+  p{
+    padding: 0;
+    margin: 0;
+  }
+  .content {
+    color: $gray;
+    margin-left: $margin * 2;
+  }
+  .room {
+    color: $gray-hover;
+    margin-left: $margin * 4;
+    font-style: italic
+  }
+  .recommendation-text{
+    padding: $padding * 2;
+  }
+}
+
+.recommendation:hover {
+  transform:scale(1.03);
+  transform-origin:left center;
+}

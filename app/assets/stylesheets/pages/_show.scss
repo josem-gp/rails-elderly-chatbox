@@ -85,36 +85,11 @@
   width: 90%;
   height: 80%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  p{
+  .message-title{
     overflow: hidden;
-    padding: $padding * 2;
-    color: $gray-letters;
+    color: $gray-letters-hover;
     margin: $margin * 2;
   }
-}
-
-.message {
-  margin: ($margin * 4) ($margin * 6);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  border-radius: $border-radius * 2;
-  p{
-    padding: 0;
-    margin: 0;
-  }
-  .content {
-    color: $gray;
-    margin-left: $margin * 2;
-  }
-  .room {
-    color: $gray-hover;
-    margin-left: $margin * 4;
-    font-style: italic
-  }
-}
-
-.message:hover {
-  transform:scale(1.03);
-  transform-origin:left center;
 }
 
 //3rd container - rooms
@@ -129,7 +104,7 @@
   height: 96%;
   #cont-title{
     padding: $padding * 2;
-    color: $gray-letters;
+    color: $gray-letters-hover;
   }
 }
 
