@@ -1,1 +1,4 @@
-<div id='marker-shop-<%= shop.id %>' class='marker'><i class="fas fa-map-marker-alt"></i></div>
+<div id='marker-shop-<%= shop.id %>' class='marker fa-stack' style="vertical-align: top;">
+  <i class="fas fa-map-marker fa-stack-1x"></i>
+  <%= cl_image_tag shop.photos.first.key, class: 'avatar-marker fa-stack-2x'%>
+</div>

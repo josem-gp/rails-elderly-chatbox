@@ -15,6 +15,26 @@
   text-decoration: none;
 }
 
+.btn-recommend {
+  width: 100%;
+  color: white;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: ($padding) ($padding * 3);
+  border-radius: $border-radius * 2;
+  background: $purple-hover;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-recommend:hover {
+  background: $purple;
+  color: white;
+  text-decoration: none;
+}
+
+
+
 .btn-sign {
   line-height: initial;
   border: none;
