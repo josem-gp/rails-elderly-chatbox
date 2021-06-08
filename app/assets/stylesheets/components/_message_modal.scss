@@ -1,0 +1,36 @@
+.modal-body {
+  padding: 0;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.modal-header {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.modal-content {
+  border-radius: 14px;
+}
+
+#map {
+  border-bottom-right-radius: 14px;
+}
+
+
+.flex-message {
+  display: flex;
+}
+
+.grid-message {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+  width: 100%;
+}
+
+.message-form {
+  padding: $padding * 4;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  z-index: 1;
+  box-shadow: 5px 0 5px -5px #333;
+}
