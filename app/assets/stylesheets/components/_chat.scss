@@ -11,6 +11,7 @@
 .chat-title{
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   margin-top: 12px;
   padding-bottom: 12px;
   border-bottom: 1px solid #F0F0F0;
@@ -28,7 +29,7 @@
 }
 
 .chat-display {
-  height: 88vh;
+  height: 82vh;
   border-bottom:1px solid #F0F0F0;
   border-right: 1px solid #F0F0F0;
   background-color: #FAFAFA
@@ -40,4 +41,8 @@
   border-bottom:1px solid #F0F0F0;
   border-right: 1px solid #F0F0F0;
   background-color: white;
+}
+
+.search-form {
+  width: 25%;
 }

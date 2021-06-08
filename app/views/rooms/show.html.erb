@@ -40,8 +40,11 @@
   <div class= "c-container">
     <div class="chat-secondary-container">
       <div class="chat-title">
-        <i class="fab fa-slack-hash"></i>
-        <h2><%= @room.name %></h2>
+        <div class="room-name">
+          <i class="fab fa-slack-hash"></i>
+          <h2><%= @room.name %></h2>
+        </div>
+        <input class="form-control search-form" type="text" placeholder="Type your message..." aria-label="default input example">
       </div>
       <div class="chat-display">
         <div class="inner-chat-display">
