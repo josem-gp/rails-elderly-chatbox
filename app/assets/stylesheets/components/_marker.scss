@@ -3,3 +3,13 @@
   color: $purple;
 
 }
+
+// pop-up
+
+.mapboxgl-popup-content {
+  visibility: hidden;
+}
+
+.mapboxgl-popup-tip {
+  visibility: hidden;
+}
