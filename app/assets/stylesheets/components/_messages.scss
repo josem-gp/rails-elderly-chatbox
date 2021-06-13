@@ -8,21 +8,35 @@
 .user-message {
   display: flex;
   align-items: flex-start;
-  margin-top: 24px;
+  margin-top: 12px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 95%;
 }
 
 .message-text{
   margin-left: 12px;
   margin-top: 6px;
+  i {
+    color: $gray-back;
+    position: absolute;
+    top: 28px;
+    left: 36px;
+  }
+  i:hover {
+   color: $gray-hover;
+  }
 }
 
 .message-text h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .message-text p {
   margin: 0;
+  font-size: 15px;
 }
 
 .user-message img {
