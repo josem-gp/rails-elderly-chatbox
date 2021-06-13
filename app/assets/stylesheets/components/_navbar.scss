@@ -8,6 +8,9 @@
   flex-grow: 0;
   .navbar-nav {
     align-items: center;
+    a {
+      color: $purple !important;
+    }
   }
 }
 
