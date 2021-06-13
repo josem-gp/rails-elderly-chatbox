@@ -1,8 +1,22 @@
 <% @shops.each do |shop| %>
   <% if shop.messages.count > 0 %>
-    <div class="user-message">
+    <div class="recommendation-message">
       <div class = "recommendation-text">
-        <%= cl_image_tag shop.photos.first.key, height: 200, width: 200, crop: :fill %>
+        <div class="recommendation-image-info">
+          <%= cl_image_tag shop.photos.first.key, height: 200, width: 200, crop: :fill %>
+          <div class="recommendation-info">
+            <h2><%= shop.name %></h2>
+            <div class='icon-info'><i class="fas fa-map icon-descr"></i>
+              <p><%= shop.address %></p>
+            </div>
+            <div class='icon-info'><i class="fas fa-phone-square-alt icon-descr"></i>
+              <p><%= shop.phone_number %></p>
+            </div>
+            <div class='icon-info'><i class="fas fa-info-circle icon-descr"></i>
+              <p><%= shop.website %></p>
+            </div>
+          </div>
+        </div>
         <% shop.messages.each do |message|  %>
           <div class="recommendation-delete">
             <h3><%= message.user.alias %></h3>
