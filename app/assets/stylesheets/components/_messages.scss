@@ -95,3 +95,43 @@
   transform:scale(1.03);
   transform-origin:left center;
 }
+
+// To style the JS divs when clicking on the markers
+
+.shop-show{
+  // display:flex;
+  flex-direction: column;
+  // align-items: center;
+  margin: 0 !important;
+  margin-bottom: $margin * 2 !important;
+}
+
+.icon-info{
+  display: flex;
+  align-items: baseline;
+}
+
+.icon-descr {
+  color: $purple-hover;
+  margin-right: $margin * 2.5;
+}
+
+.recommendation-form {
+  padding: ($margin * 3) ($margin * 4) !important;
+}
+
+.shop-img{
+  margin: 0 auto;
+  margin-bottom: $margin * 2;
+  img {
+    width: 300px;
+    height: 150px;
+  }
+}
+
+.shop-info {
+  margin-left: 26px;
+  h3 {
+    font-size: $font-size * 4;
+  }
+}

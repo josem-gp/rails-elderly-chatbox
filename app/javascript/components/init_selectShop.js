@@ -1,7 +1,9 @@
 
 const selectShop = () => {
   const form = document.querySelector('.hidden > input');
-  const imgContainer = document.querySelector('.shop-show');
+  const shopContainer = document.querySelector('.shop-show');
+  const imgContainer = document.querySelector('.shop-img');
+  const infoContainer = document.querySelector('.shop-info');
   document.querySelectorAll('.marker').forEach((shop) => {
     shop.addEventListener('click', (event) => {
       event.preventDefault();
@@ -14,14 +16,33 @@ const selectShop = () => {
       const marker = markers.find(marker => marker.id == id);
       const markerImg = marker.info_window.split('\n')[0];
       const markerTitle = marker.info_window.split('\n')[1];
+      const markerAddress = marker.info_window.split('\n')[2];
+      const markerPhone = marker.info_window.split('\n')[3];
+      const markerWebsite = marker.info_window.split('\n')[4];
+
       if (imgContainer.innerHTML === "") {
         imgContainer.insertAdjacentHTML('beforeend', markerImg);
-        imgContainer.insertAdjacentHTML('beforeend', markerTitle);
+        infoContainer.insertAdjacentHTML('beforeend', markerTitle);
+        infoContainer.insertAdjacentHTML('beforeend', `<div class='icon-info'><i class="fas fa-map icon-descr"></i>${markerAddress}</div>`);
+        infoContainer.insertAdjacentHTML('beforeend', `<div class='icon-info'><i class="fas fa-phone-square-alt icon-descr"></i>${markerPhone}</div>`);
+        infoContainer.insertAdjacentHTML('beforeend', `<div class='icon-info'><i class="fas fa-info-circle icon-descr"></i>${markerWebsite}</div>`);
+
       } else {
-        imgContainer.firstElementChild.remove();
-        imgContainer.firstElementChild.remove();
-        imgContainer.insertAdjacentHTML('beforeend', markerImg);
-        imgContainer.insertAdjacentHTML('beforeend', markerTitle);
+        shopContainer.firstElementChild.remove();
+        shopContainer.firstElementChild.remove();
+
+        shopContainer.insertAdjacentHTML('beforeend', '<div class="shop-img"></div>');
+        shopContainer.insertAdjacentHTML('beforeend', '<div class="shop-info"></div>');
+
+        const newImgContainer = document.querySelector('.shop-img');
+        const newInfoContainer = document.querySelector('.shop-info');
+
+        newImgContainer.insertAdjacentHTML('beforeend', markerImg);
+        console.log('hi');
+        newInfoContainer.insertAdjacentHTML('beforeend', markerTitle);
+        newInfoContainer.insertAdjacentHTML('beforeend', `<div class='icon-info'><i class="fas fa-map icon-descr"></i>${markerAddress}</div>`);
+        newInfoContainer.insertAdjacentHTML('beforeend', `<div class='icon-info'><i class="fas fa-phone-square-alt icon-descr"></i>${markerPhone}</div>`);
+        newInfoContainer.insertAdjacentHTML('beforeend', `<div class='icon-info'><i class="fas fa-info-circle icon-descr"></i>${markerWebsite}</div>`);
       }
     })
   });
