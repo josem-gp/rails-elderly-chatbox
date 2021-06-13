@@ -1,0 +1,15 @@
+<div class="flex-message">
+  <div class="event-form">
+    <div class="message-container">
+      <div class = "event-show"></div>
+      <%= simple_form_for [@user, @participant] do |f| %>
+        <%= f.association :room, collection: @rooms, prompt: "Choose a Room" %>
+        <%= link_to 'Go back', user_path(@user), class: "btn-back" %>
+        <%= f.submit "Join the room", class: "btn-sign" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="image-container-room">
+    <%= image_tag "event.jpg", alt: "Image Event Form"%>
+  </div>
+</div>

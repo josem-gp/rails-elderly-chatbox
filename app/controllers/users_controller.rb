@@ -15,6 +15,8 @@ class UsersController < ApplicationController
         marker: render_to_string(partial: "marker", locals: { shop: shop })
       }
     end
+    @participant = Participant.new
+    @rooms = Room.where.not(id: @user.room_ids)
     authorize @user
   end
 

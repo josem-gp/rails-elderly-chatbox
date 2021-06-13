@@ -1,0 +1,22 @@
+<!-- Button trigger modal -->
+<div class = "action-btn">
+  <p data-toggle="modal" data-target="#formModalRoom">
+    Choose a new Room
+  </p>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="formModalRoom" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formModalLabel">Choose a new Room</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'participants/form' %>
+      </div>
+    </div>
+  </div>
+</div>

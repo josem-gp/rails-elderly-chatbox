@@ -8,7 +8,7 @@
       <div class="actions">
         <p class = "main-action">Profile</p>
         <div class="profile-actions">
-          <%= link_to 'Choose a new Room', new_user_participant_path(@user) %>
+          <%= render 'participants/modal' %>
           <%= render 'messages/modal' %>
           <%= render 'events/modal' %>
         </div>

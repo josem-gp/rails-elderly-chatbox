@@ -40,11 +40,11 @@
 .event-form {
   padding: $padding * 4;
   flex-grow: 1;
-}
-
-
-.event-show {
-  margin-top: 25%;
+  display: flex;
+  align-items: center;
+  .message-container {
+    flex-grow: 1;
+  }
 }
 
 .image-container-event {
@@ -56,3 +56,26 @@
     object-fit: cover;
   }
 }
+
+// room-modal
+
+.event-form {
+  padding: $padding * 4;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  .message-container {
+    flex-grow: 1;
+  }
+}
+
+.image-container-room {
+  width: 60%;
+  img {
+    border-radius: 14px;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+

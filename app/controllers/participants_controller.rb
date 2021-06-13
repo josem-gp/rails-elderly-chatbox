@@ -1,11 +1,4 @@
 class ParticipantsController < ApplicationController
-  def new
-    @user = User.find(params[:user_id])
-    @participant = Participant.new
-    @rooms = Room.where.not(id: @user.room_ids)
-    authorize @participant
-  end
-
   def create
     @user = User.find(params[:user_id])
     @room = Room.find(params[:participant][:room_id])
