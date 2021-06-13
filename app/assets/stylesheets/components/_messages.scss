@@ -39,6 +39,32 @@
   font-size: 15px;
 }
 
+.recommendation-delete {
+  display: flex;
+}
+
+.recommendation-text{
+  margin-left: 12px;
+  i {
+    color: $gray-back;
+    margin-left: $margin * 2;
+  }
+  i:hover {
+   color: $gray-hover;
+  }
+  h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  p {
+    margin: 0;
+    font-size: 15px;
+  }
+}
+
+
+
 .user-message img {
   width: 48px;
   height: 48px;

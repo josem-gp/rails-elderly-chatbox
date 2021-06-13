@@ -1,16 +1,18 @@
 <% @shops.each do |shop| %>
   <% if shop.messages.count > 0 %>
     <div class="user-message">
-      <div class = "message-text">
+      <div class = "recommendation-text">
         <%= cl_image_tag shop.photos.first.key, height: 200, width: 200, crop: :fill %>
         <% shop.messages.each do |message|  %>
-          <h3><%= message.user.alias %></h3>
+          <div class="recommendation-delete">
+            <h3><%= message.user.alias %></h3>
+            <% if current_user.id == message.user_id %>
+              <%= link_to user_message_path(@user,message), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fas fa-eraser del-icon"></i>
+              <% end %>
+            <% end %>
+          </div>
           <p><%= message.content %></p>
-          <%= link_to "Remove",
-                  user_message_path(@user,message),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" }
-                   %>
         <% end %>
       </div>
     </div>

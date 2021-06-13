@@ -4,8 +4,10 @@
     <div class = "message-text">
       <h3><%= event.user.alias %></h3>
       <p><%= event.content %></p>
-      <%= link_to user_event_path(current_user, event), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fas fa-eraser del-icon"></i>
+      <% if current_user.id == event.user_id %>
+        <%= link_to user_event_path(current_user, event), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-eraser del-icon"></i>
+        <% end %>
       <% end %>
     </div>
   </div>
