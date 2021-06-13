@@ -109,6 +109,9 @@
 .icon-info{
   display: flex;
   align-items: baseline;
+  p {
+    font-size: 14px;
+  }
 }
 
 .icon-descr {
@@ -132,6 +135,6 @@
 .shop-info {
   margin-left: 26px;
   h3 {
-    font-size: $font-size * 4;
+    font-size: 22px !important;
   }
 }

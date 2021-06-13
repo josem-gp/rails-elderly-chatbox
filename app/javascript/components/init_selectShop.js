@@ -1,3 +1,5 @@
+import { hoverShop } from './init_hoverShop';
+
 
 const selectShop = () => {
   const form = document.querySelector('.hidden > input');
@@ -5,6 +7,7 @@ const selectShop = () => {
   const imgContainer = document.querySelector('.shop-img');
   const infoContainer = document.querySelector('.shop-info');
   document.querySelectorAll('.marker').forEach((shop) => {
+    // hoverShop(shop);
     shop.addEventListener('click', (event) => {
       event.preventDefault();
       const fullId = event.currentTarget.id;
@@ -38,7 +41,6 @@ const selectShop = () => {
         const newInfoContainer = document.querySelector('.shop-info');
 
         newImgContainer.insertAdjacentHTML('beforeend', markerImg);
-        console.log('hi');
         newInfoContainer.insertAdjacentHTML('beforeend', markerTitle);
         newInfoContainer.insertAdjacentHTML('beforeend', `<div class='icon-info'><i class="fas fa-map icon-descr"></i>${markerAddress}</div>`);
         newInfoContainer.insertAdjacentHTML('beforeend', `<div class='icon-info'><i class="fas fa-phone-square-alt icon-descr"></i>${markerPhone}</div>`);
