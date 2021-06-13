@@ -18,7 +18,11 @@
               <% if room.name == @room.name %>
                 <li class="white-room-name"><i class="fab fa-slack-hash white-room"></i><%= room.name %></li>
               <% else %>
-                <li><i class="fab fa-slack-hash"></i><%= room.name %></li>
+                <li class= "grey-room">
+                  <%= link_to user_room_path(current_user, room) do %>
+                    <i class="fab fa-slack-hash"></i><%= room.name %>
+                  <% end %>
+                </li>
               <% end %>
             <% end %>
           </ul>
@@ -29,11 +33,11 @@
         </div>
         <div class = "profile-content users">
           <ul>
-            <% @room.users.each do |user| %>
-              <% if user.id != @user.id %>
-                <li><i class="fas fa-circle"></i><%= user.alias %></li>
-              <% end %>
-            <% end %>
+            <%# @room.users.each do |user| %>
+              <%# if user.id != @user.id %>
+                <li><i class="fas fa-circle"></i><%#= user.alias %></li>
+              <%# end %>
+            <%# end %>
           </ul>
         </div> -->
       </div>
@@ -54,7 +58,7 @@
       </div>
       <div class="chat-display">
         <div class="inner-chat-display">
-          <% if @room.room_type == "private" %>
+          <% if @room.room_type == "private"  %>
             <%= render 'show_messages' %>
           <% else %>
             <%= render 'show_events' %>

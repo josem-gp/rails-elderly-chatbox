@@ -1,7 +1,7 @@
 <% @shops.each do |shop| %>
-  <div class="user-message">
-    <div class = "message-text">
-      <% unless shop.messages.blank? %>
+  <% if shop.messages.count > 0 %>
+    <div class="user-message">
+      <div class = "message-text">
         <%= cl_image_tag shop.photos.first.key, height: 200, width: 200, crop: :fill %>
         <% shop.messages.each do |message|  %>
           <h3><%= message.user.alias %></h3>
@@ -12,7 +12,7 @@
                   data: { confirm: "Are you sure?" }
                    %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
