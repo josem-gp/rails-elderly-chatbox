@@ -11,7 +11,6 @@
       <div class = "profile-box">
         <div class= "profile-title">
           <h3>Rooms</h3>
-          <i class="fas fa-plus"></i>
         </div>
         <div class = "profile-content channels">
           <ul>
@@ -20,7 +19,7 @@
             <% end %>
           </ul>
         </div>
-        <div class= "profile-title">
+        <!--         <div class= "profile-title">
           <h3>Direct Messages</h3>
           <i class="fas fa-plus"></i>
         </div>
@@ -32,17 +31,20 @@
               <% end %>
             <% end %>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
-    <%= link_to 'Go back', user_path(@user), class: "btn-back" %>
+    <div class="go-back-btn">
+      <%= link_to user_path(current_user.id) do %>
+        <p><i class="fas fa-chevron-circle-left back-button"></i>Back</p>
+      <% end %>
+    </div>
   </div>
   <div class= "c-container">
     <div class="chat-secondary-container">
       <div class="chat-title">
         <div class="room-name">
-          <i class="fab fa-slack-hash"></i>
-          <h2><%= @room.name %></h2>
+          <h2><%= @room.name %> Room</h2>
         </div>
         <input class="form-control search-form" type="text" placeholder="Search..." aria-label="default input example">
       </div>
