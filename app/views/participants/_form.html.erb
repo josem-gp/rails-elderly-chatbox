@@ -4,9 +4,13 @@
       <div class = "event-show"></div>
       <%= simple_form_for [@user, @participant] do |f| %>
         <%= f.association :room, collection: @rooms, prompt: "Choose a Room" %>
-        <%= link_to 'Go back', user_path(@user), class: "btn-back" %>
-        <%= f.submit "Join the room", class: "btn-sign" %>
+        <%= f.submit "Join the room", class: "btn-recommend" %>
       <% end %>
+      <div class="go-back-btn">
+        <%= link_to user_path(current_user.id) do %>
+          <p><i class="fas fa-chevron-circle-left back-button"></i>Back</p>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="image-container-room">

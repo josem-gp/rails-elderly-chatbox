@@ -48,7 +48,7 @@
 }
 
 .image-container-event {
-  width: 60%;
+  width: 50%;
   img {
     border-radius: 14px;
     width: 100%;
@@ -79,3 +79,6 @@
   }
 }
 
+.go-back-btn {
+  margin-top: $margin * 6;
+}
