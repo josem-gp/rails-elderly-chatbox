@@ -54,7 +54,15 @@
         <div class="room-name">
           <h2><%= @room.name %> Room</h2>
         </div>
-        <input class="form-control search-form" type="text" placeholder="Search..." aria-label="default input example">
+        <!-- <input class="form-control search-form" type="text" placeholder="Search..." aria-label="default input example"> -->
+        <%= form_tag user_room_path(current_user,@room), class: "form-inline", method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a shop"
+        %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
       </div>
       <div class="chat-display">
         <div class="inner-chat-display">
