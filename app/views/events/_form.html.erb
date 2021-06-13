@@ -1,10 +1,15 @@
-<div class="message-form">
-  <div class="message-container">
-    <div class = "shop-show"></div>
-    <%= simple_form_for [@user, @event] do |f| %>
-      <%= f.input :content %>
-      <%= f.association :room, collection: current_user.rooms.where(room_type: 'public').order("name asc"), prompt: "Choose a Room" %>
-      <%= f.submit "Create it!", class: "btn-log" %>
-    <% end %>
+<div class="flex-message">
+  <div class="event-form">
+    <div class="message-container">
+      <div class = "event-show"></div>
+      <%= simple_form_for [@user, @event] do |f| %>
+        <%= f.input :content %>
+        <%= f.association :room, collection: current_user.rooms.where(room_type: 'public').order("name asc"), prompt: "Choose a Room" %>
+        <%= f.submit "Create it!", class: "btn-recommend" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="image-container-event">
+    <%= image_tag "event.jpg", alt: "Image Event Form"%>
   </div>
 </div>

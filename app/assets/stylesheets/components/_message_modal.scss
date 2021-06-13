@@ -34,3 +34,25 @@
   z-index: 1;
   box-shadow: 5px 0 5px -5px #333;
 }
+
+// events-modal
+
+.event-form {
+  padding: $padding * 4;
+  flex-grow: 1;
+}
+
+
+.event-show {
+  margin-top: 25%;
+}
+
+.image-container-event {
+  width: 60%;
+  img {
+    border-radius: 14px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
