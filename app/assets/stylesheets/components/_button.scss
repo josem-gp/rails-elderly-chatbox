@@ -90,3 +90,16 @@ a:hover {
   background-color: $gray-back;
   color: white;
 }
+
+
+// search
+
+.search-btn {
+  background: $purple;
+  color: white;
+}
+
+.search-btn:hover {
+  background: $purple-hover;
+  color: white;
+}
