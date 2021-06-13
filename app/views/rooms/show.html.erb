@@ -2,7 +2,7 @@
   <div class = "sidebar-secondary">
     <div class= "sidebar-secondary-container">
       <div class = "box-header">
-        <h2>Rooms</h2>
+        <h2>Kairanban</h2>
         <div class="box-header-id">
           <i class="fas fa-circle"></i>
           <p><%= @user.alias %></p>
@@ -15,7 +15,11 @@
         <div class = "profile-content channels">
           <ul>
             <% @user.rooms.each do |room| %>
-              <li><i class="fab fa-slack-hash"></i><%= room.name %></li>
+              <% if room.name == @room.name %>
+                <li class="white-room-name"><i class="fab fa-slack-hash white-room"></i><%= room.name %></li>
+              <% else %>
+                <li><i class="fab fa-slack-hash"></i><%= room.name %></li>
+              <% end %>
             <% end %>
           </ul>
         </div>
@@ -34,7 +38,7 @@
         </div> -->
       </div>
     </div>
-    <div class="go-back-btn">
+    <div class="room-back">
       <%= link_to user_path(current_user.id) do %>
         <p><i class="fas fa-chevron-circle-left back-button"></i>Back</p>
       <% end %>
@@ -59,6 +63,4 @@
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>

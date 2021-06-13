@@ -28,10 +28,11 @@
   color: white;
 }
 
+
 /*SECOND SIDEBAR*/
 
 .sidebar-secondary {
-  background-color: #55458e;
+  background-color: $purple;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,6 +41,10 @@
 .sidebar-secondary-container {
   width: 80%;
   margin: 0 auto;
+}
+
+.room-back {
+  margin: $margin * 3;
 }
 
 .box-header {
@@ -79,7 +84,7 @@
 
 .profile-title h3, i {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
   color: white;
 }
 
@@ -88,6 +93,7 @@
   padding: 0;
   color: #A59CA4;
   font-size: 16px;
+  margin-top: $margin * 4;
 }
 
 .profile-content i {
@@ -96,9 +102,14 @@
   font-size: 16px;
 }
 
-.channels li:nth-child(3){
+.white-room-name {
   color: white;
+  .white-room{
+    color: white !important;
+  }
 }
+
+
 
 .users i {
   color: #67E6BE;
