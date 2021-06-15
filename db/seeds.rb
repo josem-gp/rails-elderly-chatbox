@@ -126,7 +126,7 @@ websites = ['https://kollabo.co.jp/', 'http://www.dynac-japan.com/shop/la_bouche
 images.each_with_index do |image, idx|
 
   file = URI.open(image)
-  shop = Shop.new(name: name[idx], address: address[idx], phone_number: phone_numbers[idx], websites: [idx] )
+  shop = Shop.new(name: name[idx], address: address[idx], phone_number: phone_numbers[idx], website: websites[idx] )
   shop.photos.attach(io: file, filename: 'shop.jgp', content_type: 'image/jgp')
   shop.save!
 end
