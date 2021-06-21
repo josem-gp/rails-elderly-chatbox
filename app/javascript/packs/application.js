@@ -24,7 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { initSelect2 } from '../components/init_select2';
+
 import { initMapbox } from '../plugins/init_mapbox';
 import { selectShop } from '../components/init_selectShop';
 
@@ -34,12 +34,6 @@ import { selectShop } from '../components/init_selectShop';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-    initSelect2();
-    document.querySelector("#recommendation-map").addEventListener("click", () => {
-      setTimeout(() => {
-        initMapbox();
-      },500);
-    });
+    initMapbox();
     selectShop();
-
 });
