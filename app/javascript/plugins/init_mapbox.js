@@ -1,4 +1,4 @@
-import 'mapbox-gl/dist/mapbox-gl.css';
+// import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 
 const fitMapToMarkers = (map, markers) => {
