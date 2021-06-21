@@ -35,7 +35,11 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
     initSelect2();
-    initMapbox();
+    document.querySelector("#recommendation-map").addEventListener("click", () => {
+      setTimeout(() => {
+        initMapbox();
+      },500);
+    });
     selectShop();
 
 });
