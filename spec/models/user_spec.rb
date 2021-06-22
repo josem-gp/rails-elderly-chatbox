@@ -64,4 +64,6 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:email]).to include("has already been taken")
   end
+  it "does not allow duplicate room for a user"
+  it "allows several users to have the same room"
 end

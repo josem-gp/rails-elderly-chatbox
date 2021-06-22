@@ -23,6 +23,7 @@ class User < ApplicationRecord
   before_validation :add_default_icon, on: :create
   before_create :capitalize_first
   after_create :create_room_assignments
+
   def capitalize_first
     name.split.map(&:capitalize).join(' ')
   end
