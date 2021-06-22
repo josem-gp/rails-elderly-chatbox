@@ -1,48 +1,35 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  it "is valid if it has a content, room_id and user_id" do
-    room = Room.new(name: "Chiyoda",
-                    room_type: "private")
+  before do
+    @room = Room.new(name: "Chiyoda",
+                     room_type: "private")
+    @public_room = Room.new(name: "General",
+                            room_type: "public")
     icon = Icon.create(name: 'default_icon', url: Icon::IMAGES[0])
-    user = User.new(name: "Tester",
-                    alias: "Test_alias",
-                    municipality: "Chiyoda-ku",
-                    email: "tester@example.com",
-                    password: "1234567",
-                    icon: icon)
-    event = Event.new(room: room, user: user, content: 'Come see the event!')
+    @user = User.new(name: "Tester",
+                     alias: "Test_alias",
+                     municipality: "Chiyoda-ku",
+                     email: "tester@example.com",
+                     password: "1234567",
+                     icon: icon)
+
+  end
+  it "is valid if it has a content, room_id and user_id" do
+    event = Event.new(room: @room, user: @user, content: 'Come see the event!')
     expect(event).to be_valid
   end
   it "is not valid if the content has less than 5 words" do
-    room = Room.new(name: "Chiyoda",
-                    room_type: "private")
-    icon = Icon.create(name: 'default_icon', url: Icon::IMAGES[0])
-    user = User.new(name: "Tester",
-                    alias: "Test_alias",
-                    municipality: "Chiyoda-ku",
-                    email: "tester@example.com",
-                    password: "1234567",
-                    icon: icon)
-    event = Event.new(room: room, user: user, content: 'Hi!')
+    event = Event.new(room: @room, user: @user, content: 'Hi!')
     expect(event).to_not be_valid
   end
   it "should have a room_id" do
-    icon = Icon.create(name: 'default_icon', url: Icon::IMAGES[0])
-    user = User.new(name: "Tester",
-                    alias: "Test_alias",
-                    municipality: "Chiyoda-ku",
-                    email: "tester@example.com",
-                    password: "1234567",
-                    icon: icon)
-    event = Event.new(user: user, content: 'Come see the event!')
+    event = Event.new(user: @user, content: 'Come see the event!')
     event.valid?
     expect(event.errors[:room]).to include("must exist")
   end
   it "should have an user_id" do
-    room = Room.new(name: "Chiyoda",
-                    room_type: "private")
-    event = Event.new(room: room, content: 'Come see the event!')
+    event = Event.new(room: @room, content: 'Come see the event!')
     event.valid?
     expect(event.errors[:user]).to include("must exist")
   end
