@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  before do
+    @jose = User.create(name: "jose manuel",
+                        alias: "jgp",
+                        municipality: "Chiyoda-ku",
+                        email: "jose@example.com",
+                        password: "1234567")
+  end
   it "is valid with a name, alias, municipality, email, password and icon" do
     icon = Icon.create(name: 'default_icon', url: Icon::IMAGES[0])
     user = User.new(name: "Tester",
@@ -64,4 +71,12 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:email]).to include("has already been taken")
   end
+  it "returns the name capitalized" do
+    expect(@jose.capitalize_first).to eq "Jose Manuel"
+  end
+  it "returns the 3 public rooms and the private room that matches municipality for user" do
+
+  end
+
+  it "adds the default icon for user"
 end
