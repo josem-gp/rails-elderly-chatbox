@@ -81,11 +81,11 @@ puts "Done!"
 
 puts "Creating Trial Users"
 
-user = User.new(name: 'jose garcia', age: 28, municipality: 'Chuo-ku', alias: 'josegp91', email: 'jose@hotmail.com', password: '1234567')
-user.save!
+jose = User.new(name: 'jose garcia', age: 28, municipality: 'Chuo-ku', alias: 'josegp91', email: 'jose@hotmail.com', password: '1234567')
+jose.save!
 
-user = User.new(name: 'doug', age: 28, municipality: 'Chuo-ku', alias: 'doug', email: 'doug@hotmail.com', password: '1234567')
-user.save!
+doug = User.new(name: 'doug', age: 28, municipality: 'Chuo-ku', alias: 'doug', email: 'doug@hotmail.com', password: '1234567')
+doug.save!
 
 puts "Trial Users created!"
 
@@ -126,7 +126,7 @@ websites = ['https://kollabo.co.jp/', 'http://www.dynac-japan.com/shop/la_bouche
 images.each_with_index do |image, idx|
 
   file = URI.open(image)
-  shop = Shop.new(name: name[idx], address: address[idx], phone_number: phone_numbers[idx], website: websites[idx] )
+  shop = Shop.new(name: name[idx], address: address[idx], phone_number: phone_numbers[idx], website: websites[idx], user_id: jose)
   shop.photos.attach(io: file, filename: 'shop.jgp', content_type: 'image/jgp')
   shop.save!
 end
