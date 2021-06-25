@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require "open-uri"
+# require "open-uri"
 
 def cleaning_name(address)
   address.match(/(\w*)-/)[1].strip
