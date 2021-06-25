@@ -27,7 +27,7 @@ import "bootstrap";
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { selectShop } from '../components/init_selectShop';
-
+import { callAPI } from '../components/init_callAPI';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -36,4 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
     initMapbox();
     selectShop();
+    callAPI();
 });
+
