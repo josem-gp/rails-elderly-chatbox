@@ -25,13 +25,9 @@
                 <i class="fas fa-times del-icon"></i>
               <% end %>
               <p><%= room.name %></p>
-              <div class="icon-cont">
-                <%= link_to user_room_path(@user, room) do %>
-                  <i class="fas fa-external-link-alt enter-icon"></i>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
+              <%= link_to '', user_room_path(@user, room), class: 'tag-link'%>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="main-info">
