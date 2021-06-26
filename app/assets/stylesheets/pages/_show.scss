@@ -9,6 +9,28 @@
 
 .side-bar-profile {
   background-color: blue;
+  .nav-tabs {
+    border: none;
+    justify-content: center;
+    li {
+      padding-top: 12px;
+      width: -webkit-fill-available;
+      a {
+        text-align: center;
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+    .nav-link {
+      border-radius: 0px;
+      border:none;
+    }
+    .nav-link.active {
+      background-color: gray;
+      border-color: transparent;
+    }
+  }
 }
 
 .main-bar-profile {
