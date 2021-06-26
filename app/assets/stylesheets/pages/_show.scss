@@ -1,4 +1,6 @@
 
+//Main grid
+
 .show-grid {
   position: relative;
   display: grid;
@@ -6,6 +8,7 @@
   height: 100vh;
 }
 
+// Left navbar
 
 .side-bar-profile {
   background-color: $purple;
@@ -36,6 +39,31 @@
   }
 }
 
-.main-bar-profile {
+// Profile page - main navbar
 
+.container-header {
+  padding: 40px 60px;
+  .header-font {
+    h3 {
+       width: 100%;
+       text-align: left;
+       border-bottom: 2px solid $line-color;
+       line-height: 0.2em !important;
+       margin: 10px 0 20px;
+    }
+
+    h3 span {
+        background:#fff;
+        padding-right:32px;
+        border: 1px solid white;
+    }
+  }
+}
+
+.container-profile {
+  margin-top: 40px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0 ,.24) 0px 3px 8px;
+  border-radius: 8px;
+  padding: 32px;
 }
