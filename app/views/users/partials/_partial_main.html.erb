@@ -26,9 +26,7 @@
               <% end %>
               <p><%= room.name %></p>
               <div class="icon-cont">
-                <%= link_to user_room_path(@user, room) do %>
-                  <i class="fas fa-external-link-alt enter-icon"></i>
-                <% end %>
+                <%= link_to "", user_room_path(@user, room), class: "card-link"  %>
               </div>
             </div>
           <% end %>

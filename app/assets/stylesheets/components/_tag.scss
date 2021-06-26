@@ -20,12 +20,12 @@
     font-size: $font-size * 2.2;
     color: $line-color;
   }
-  .icon-cont{
-    border-left: 3px solid #f2f2f9;
-    .enter-icon{
-      color: $purple;
-      padding-left: $padding * 2;
-    }
+  .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
   }
 }
 
