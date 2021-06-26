@@ -9,19 +9,32 @@
     </div>
     <div class="user-name-container">
       <div class="main-info">
-        <p>User profile</p>
+        <p class="title">User profile</p>
         <div class="flex-main-info">
-          <p>Alias: <%= @user.alias %></p>
-          <p>District: <%= @user.municipality %></p>
-          <p>Email: <%= @user.email %></p>
+          <p class="info">Alias: &emsp;<span><%= @user.alias %></span></p>
+          <p class="info">District: &emsp;<span><%= @user.municipality %></span></p>
+          <p class="info">Email: &emsp;<span><%= @user.email %></span></p>
         </div>
       </div>
-      <div class="main-rooms">
-        <% @user.rooms.each do |room| %>
-          <p><%= room.name %></p>
-        <% end %>
+      <div class="main-info">
+        <p class="title">Rooms</p>
+        <div class="flex-main-rooms">
+          <% @user.rooms.order("name asc").each do |room| %>
+            <div class="room-tag">
+              <%= link_to participant_path(:room_id => room.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fas fa-times del-icon"></i>
+              <% end %>
+              <p><%= room.name %></p>
+              <div class="icon-cont">
+                <%= link_to user_room_path(@user, room) do %>
+                  <i class="fas fa-external-link-alt enter-icon"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
-      <div class="main-actions">
+      <div class="main-info">
         <div class="profile-actions">
           <%= render 'participants/modal' %>
           <%= render 'messages/modal' %>

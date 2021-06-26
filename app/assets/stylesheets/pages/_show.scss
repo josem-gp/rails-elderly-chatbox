@@ -81,7 +81,28 @@
   width: -webkit-fill-available;
   display: flex;
   flex-direction: column;
-  .flex-main-info {
-    display: flex;
-  }
+}
+
+.main-info {
+  padding: 10px 16px;
+}
+
+.title {
+  color: #c6c6c6;
+}
+.info {
+  color: gray;
+  margin-right: 10%;
+}
+span {
+  color: black;
+}
+.flex-main-info {
+  display: flex;
+  border-bottom: 2px solid #f8f9f9;
+}
+
+.flex-main-rooms {
+  display: flex;
+  border-bottom: 2px solid #f8f9f9;
 }
