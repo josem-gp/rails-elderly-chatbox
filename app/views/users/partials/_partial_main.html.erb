@@ -8,9 +8,20 @@
       <h3><%= @user.name %></h3>
     </div>
     <div class="user-name-container">
-      <p><%= @user.alias %></p>
-      <div class="actions">
-        <p class = "main-action">Profile</p>
+      <div class="main-info">
+        <p>User profile</p>
+        <div class="flex-main-info">
+          <p>Alias: <%= @user.alias %></p>
+          <p>District: <%= @user.municipality %></p>
+          <p>Email: <%= @user.email %></p>
+        </div>
+      </div>
+      <div class="main-rooms">
+        <% @user.rooms.each do |room| %>
+          <p><%= room.name %></p>
+        <% end %>
+      </div>
+      <div class="main-actions">
         <div class="profile-actions">
           <%= render 'participants/modal' %>
           <%= render 'messages/modal' %>

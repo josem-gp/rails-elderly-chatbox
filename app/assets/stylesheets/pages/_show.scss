@@ -39,8 +39,9 @@
   }
 }
 
-// Profile page - main navbar
+/// Profile page - main navbar
 
+//Layout
 .container-header {
   padding: 40px 60px;
   .header-font {
@@ -65,5 +66,22 @@
   display: flex;
   box-shadow: rgba(0, 0, 0 ,.24) 0px 3px 8px;
   border-radius: 8px;
-  padding: 32px;
+  .profile-pic {
+    padding: 36px;
+        border-right: 2px solid #f8f9f9;
+    i {
+      color: black;
+    }
+  }
+}
+
+//Profile box
+
+.user-name-container {
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  .flex-main-info {
+    display: flex;
+  }
 }
