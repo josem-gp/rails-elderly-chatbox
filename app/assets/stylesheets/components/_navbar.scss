@@ -1,7 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
   background-color: $background;
-  position:relative;
+  position: absolute;
+  width: -webkit-fill-available;
+  background-color: white;
+  padding: 0rem 1rem;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,7 +18,7 @@
 }
 
 .navbar-lewagon .navbar-brand {
-  margin: 0;
+  padding-left: 52px;
   flex-grow: 1;
   text-align: center;
   img {

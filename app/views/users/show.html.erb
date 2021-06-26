@@ -1,65 +1,7 @@
 <%= render 'shared/navbar' %>
 <div class="show-grid">
-  <div class="container-header">
-    <%= render 'modal' %>
-    <div class="user-name-container">
-      <h3><%= @user.name %></h3>
-      <p><%= @user.alias %></p>
-      <div class="actions">
-        <p class = "main-action">Profile</p>
-        <div class="profile-actions">
-          <%= render 'participants/modal' %>
-          <%= render 'messages/modal' %>
-          <%= render 'events/modal' %>
-        </div>
-      </div>
-    </div>
+  <div class="side-bar-profile">
   </div>
-  <div class="container-infoshow">
-    <div class="infoshow-title">
-      <h2>Your activity in the Neighbourhood</h2>
-    </div>
-    <div class="messages-infoshow">
-      <p class="message-title">Recommendations</p>
-      <% @user.messages.each do |message| %>
-        <div class="recommendation">
-          <%= cl_image_tag message.shop.photos.first.key, height: 100, width: 100, crop: :fill %>
-          <div class="recommendation-text">
-            <p class="rest-name"><%= message.title %></p>
-            <p class="content"><%= message.content %></p>
-            <p class="room"><%= "#{message.shop.name} - #{message.room.name} room" %></p>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="messages-infoshow">
-      <p class="message-title">Messages</p>
-      <% @user.events.each do |event| %>
-        <div class="message">
-          <p class="content"><%= event.content %></p>
-          <p class="room"><%= event.room.name %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <div class = "rooms-infoshow">
-    <div class="room-container">
-      <p id="cont-title">Rooms</p>
-      <div class="room-tags">
-        <% @user.rooms.order("name asc").each do |room| %>
-          <div class="room-tag">
-            <%= link_to participant_path(:room_id => room.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="fas fa-trash-alt del-icon"></i>
-            <% end %>
-            <p><%= room.name %></p>
-            <div class="icon-cont">
-              <%= link_to user_room_path(@user, room) do %>
-                <i class="fas fa-external-link-alt enter-icon"></i>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
+  <div class="main-bar-profile">
   </div>
 </div>

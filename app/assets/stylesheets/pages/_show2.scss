@@ -1,0 +1,120 @@
+//grid
+
+.show-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 89vh;
+}
+
+//1st grid (icon - actions)
+
+.container-header {
+  position: relative;
+  margin: ($margin * 4);
+  padding-bottom: $padding * 4;
+  .user-name-container{
+    margin-left: 28%;
+    h3{
+      font-weight: bold;
+      font-size: $font-size * 4.5;
+    }
+  }
+}
+
+.actions{
+  margin-top: $margin * 6;
+  .main-action{
+    font-size: $font-size * 3;
+    // font-weight: bold;
+  }
+  .profile-actions{
+    display: flex;
+    flex-direction: column;
+    height: 98px;
+    justify-content: space-around;
+    margin-left: 4px;
+    .action-btn{
+      color: $gray-letters;
+    }
+    .action-btn:hover {
+      color: $gray-letters-hover;
+    }
+    a{
+      color: $gray-letters;
+    }
+    a:hover {
+      color: $gray-letters-hover;
+    }
+  }
+}
+
+.modal-icon {
+  position: relative;
+  img {
+    margin-left: 20%;
+  }
+  .add-sign {
+    color: $purple-tag;
+    position: absolute;
+    font-size: $font-size * 5;
+    bottom: 12px;
+  }
+  .add-sign:hover {
+    color: $purple;
+  }
+}
+
+
+//2nd container - infoshow
+
+.container-infoshow {
+  margin: ($margin * 4);
+  padding-bottom: $padding * 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .infoshow-title{
+    width: 90%;
+    h2{
+      font-weight: bold;
+      color: $purple;
+      text-align: left;
+    }
+  }
+}
+
+.messages-infoshow {
+  border-radius: $border-radius * 2;
+  margin-top: $margin * 6;
+  background-color: white;
+  width: 90%;
+  height: 80%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  .message-title{
+    overflow: hidden;
+    color: $gray-letters-hover;
+    margin: $margin * 2;
+  }
+}
+
+//3rd container - rooms
+.rooms-infoshow{
+  margin: ($margin * 4);
+  padding-bottom: $padding * 6;
+}
+.room-container {
+  border-radius: $border-radius * 2;
+  margin-top: $margin * 6;
+  width: 90%;
+  height: 96%;
+  #cont-title{
+    padding: $padding * 2;
+    color: $gray-letters-hover;
+  }
+}
+
+.room-tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
