@@ -14,12 +14,15 @@
   }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: $width * 6;
-  border: $purple 2px solid;
-  border-radius: 50%;
-  // position: absolute;
-  // left: 50%;
-  // top: 11px;
+.navbar-lewagon .navbar-brand {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  img {
+    width: $width * 6;
+    border: $purple 2px solid;
+    border-radius: 50%;
+  }
 }
+
 
