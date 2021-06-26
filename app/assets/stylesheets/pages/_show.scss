@@ -27,8 +27,11 @@
       border:none;
     }
     .nav-link.active {
-      background-color: gray;
+      background-color: white;
       border-color: transparent;
+      i {
+        color: $purple;
+      }
     }
   }
 }
