@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require "open-uri"
+require "open-uri"
+require "json"
 
 def cleaning_name(address)
   address.match(/(\w*)-/)[1].strip
@@ -90,7 +91,24 @@ doug.save!
 puts "Trial Users created!"
 
 
-# puts "Creating Trial Shops"
+puts "Creating Trial Shops"
+
+admin = User.create!(name: 'admin', age: 28, municipality: 'Chuo-ku', alias: 'admin', email: 'admin@hotmail.com', password: '1234567')
+
+response = open("https://good-neighbour-api.herokuapp.com/api/v1/shops").read
+json = JSON.parse(response)
+json.each do |shop|
+  name = shop['name']
+  address = shop['address']
+  phone_number = shop['phone_number']
+  website = shop['website']
+  image = shop['images']
+
+  file = URI.open(image)
+  shop_seed = Shop.new(name: name, address: address, phone_number: phone_number, website: website, user_id: admin)
+  shop_seed.photos.attach(io: file, filename: 'shop.jgp', content_type: 'image/jgp')
+  shop_seed.save!
+end
 
 # images = ['https://restaurantengine.com/wp-content/uploads/2015/05/startup-restaurants-typically-overspend.jpg', 'https://www.db-hospitality.com/wp-content/uploads/2017/11/hospitality-consultant.jpg',
 #           'https://lakespring.halfmoon.jp/wp-content/uploads/2015/07/restaurant-939435_960_720.jpg', 'https://art-view.roppongihills.com/en/cafe-restaurant/img/index_img02_8.jpg',
@@ -130,4 +148,4 @@ puts "Trial Users created!"
 #   shop.photos.attach(io: file, filename: 'shop.jgp', content_type: 'image/jgp')
 #   shop.save!
 # end
-# puts "Trial Shops created!"
+puts "Trial Shops created!"
