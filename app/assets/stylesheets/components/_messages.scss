@@ -174,9 +174,8 @@
 // To style the JS divs when clicking on the markers
 
 .shop-show{
-  // display:flex;
+  display:flex;
   flex-direction: column;
-  // align-items: center;
   margin: 0 !important;
   margin-bottom: $margin * 2 !important;
 }
@@ -199,11 +198,10 @@
 }
 
 .shop-img{
-  margin: 0 auto;
-  margin-bottom: $margin * 2;
+  margin: 0;
   img {
-    width: 300px;
-    height: 150px;
+    width: -webkit-fill-available !important;
+    height: 250px !important;
   }
 }
 
