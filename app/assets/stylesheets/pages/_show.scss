@@ -134,8 +134,18 @@ span {
 
 .container-messages {
   margin-top: 48px;
+  .nav-tabs {
+    border: none !important;
+  }
+
+  .nav-tabs .nav-link.active {
+    border-bottom: 2px solid $purple;
+    color: $purple;
+  }
+
+  .nav-tabs .nav-link {
+    border: none;
+    color: #c6c6c6;
+  }
 }
 
-.nav-tabs .nav-link.active {
-  border: none;
-}
