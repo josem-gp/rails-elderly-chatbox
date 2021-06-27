@@ -34,7 +34,11 @@ import { selectShop } from '../components/init_selectShop';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-    initMapbox();
-    selectShop();
+    document.querySelector("#recommendation-map").addEventListener("click", () => {
+      setTimeout(() => {
+        initMapbox();
+        selectShop();
+      },500);
+    });
 });
 
