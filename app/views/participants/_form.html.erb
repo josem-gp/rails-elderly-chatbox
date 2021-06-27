@@ -6,11 +6,6 @@
         <%= f.association :room, collection: @rooms, prompt: "Choose a Room", style: "color: gray" %>
         <%= f.submit "Join", class: "btn-recommend" %>
       <% end %>
-      <div class="go-back-btn">
-        <%= link_to user_path(current_user.id) do %>
-          <p><i class="fas fa-chevron-circle-left back-button"></i>Back</p>
-        <% end %>
-      </div>
     </div>
   </div>
   <div class="image-container-room">
