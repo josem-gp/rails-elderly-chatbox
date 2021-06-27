@@ -60,7 +60,7 @@
 }
 
 .box-header p {
-  color: #877C86;
+  color: #c6c6c6;
 }
 
 .box-header i {
@@ -94,14 +94,13 @@
 .profile-content ul {
   list-style-type: none;
   padding: 0;
-  color: #A59CA4;
   font-size: 16px;
   margin-top: $margin * 4;
 }
 
 .profile-content i {
   margin-right: 12px;
-  color: #A59CA4;
+  color: #ada9a9;
   font-size: 16px;
 }
 
@@ -109,12 +108,21 @@
   color: white;
   .white-room{
     color: white !important;
+    opacity: 1;
   }
 }
 
 .grey-room {
   a {
-    color: #A59CA4;
+    color: #ada9a9;
+    opacity: 0.4;
+  }
+}
+
+.grey-room:hover {
+  a {
+    color: #ada9a9;
+    opacity: 1;
   }
 }
 

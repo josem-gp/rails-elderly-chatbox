@@ -27,19 +27,6 @@
             <% end %>
           </ul>
         </div>
-        <!--         <div class= "profile-title">
-          <h3>Direct Messages</h3>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class = "profile-content users">
-          <ul>
-            <%# @room.users.each do |user| %>
-              <%# if user.id != @user.id %>
-                <li><i class="fas fa-circle"></i><%#= user.alias %></li>
-              <%# end %>
-            <%# end %>
-          </ul>
-        </div> -->
       </div>
     </div>
     <div class="room-back">
@@ -54,7 +41,6 @@
         <div class="room-name">
           <h2><%= @room.name %> Room</h2>
         </div>
-        <!-- <input class="form-control search-form" type="text" placeholder="Search..." aria-label="default input example"> -->
         <% if @room.room_type == "private"  %>
           <%= form_tag user_room_path(current_user,@room), class: "form-inline", method: :get do %>
             <%= text_field_tag :query,
