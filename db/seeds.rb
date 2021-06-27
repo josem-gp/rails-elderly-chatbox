@@ -61,11 +61,11 @@ puts "Private rooms created!"
 
 puts "Creating general rooms database"
 
-room = Room.create!(name: 'Promotions', room_type: 'public')
+promotions = Room.create!(name: 'Promotions', room_type: 'public')
 puts "#{room[:name]} saved!"
-room = Room.create!(name: 'General', room_type: 'public')
+general = Room.create!(name: 'General', room_type: 'public')
 puts "#{room[:name]} saved!"
-room = Room.create!(name: 'Events', room_type: 'public')
+events = Room.create!(name: 'Events', room_type: 'public')
 puts "#{room[:name]} saved!"
 
 puts "General rooms created!"
@@ -82,11 +82,21 @@ puts "Done!"
 
 puts "Creating Trial Users"
 
-jose = User.new(name: 'jose garcia', age: 28, municipality: 'Chuo-ku', alias: 'josegp91', email: 'jose@hotmail.com', password: '1234567')
-jose.save!
+jose = User.create!(name: 'jose garcia', age: 28, municipality: 'Chuo-ku', alias: 'josegp91', email: 'jose@hotmail.com', password: '1234567')
 
-doug = User.new(name: 'doug', age: 28, municipality: 'Chuo-ku', alias: 'doug', email: 'doug@hotmail.com', password: '1234567')
-doug.save!
+doug = User.create!(name: 'doug', age: 28, municipality: 'Chuo-ku', alias: 'doug', email: 'doug@hotmail.com', password: '1234567')
+
+lena = User.create!(name: 'lena', age: 28, municipality: 'Chuo-ku', alias: 'lena', email: 'lena@hotmail.com', password: '1234567')
+
+allan = User.create!(name: 'allan', age: 28, municipality: 'Chuo-ku', alias: 'allan', email: 'allan@hotmail.com', password: '1234567')
+
+kenn = User.create!(name: 'kenn', age: 28, municipality: 'Chuo-ku', alias: 'kenn', email: 'kenn@hotmail.com', password: '1234567')
+
+ryan = User.create!(name: 'ryan', age: 28, municipality: 'Chuo-ku', alias: 'ryan', email: 'ryan@hotmail.com', password: '1234567')
+
+simon = User.create!(name: 'simon', age: 28, municipality: 'Chuo-ku', alias: 'simon', email: 'simon@hotmail.com', password: '1234567')
+
+saki = User.create!(name: 'saki', age: 28, municipality: 'Chuo-ku', alias: 'saki', email: 'saki@hotmail.com', password: '1234567')
 
 puts "Trial Users created!"
 
@@ -149,3 +159,16 @@ end
 #   shop.save!
 # end
 puts "Trial Shops created!"
+
+
+puts "Creating trial events"
+
+
+content_promotions = ["I heard there is a promotion going on at Shibuya 109! Everything at 30% discount!", ""]
+content_events = ["We will be having a yoga session on Saturday 26th June 11:00 am at Yoyogi park! You're all invited to come by!", ""]
+public_rooms = Room.find_by(room_type: 'public')
+
+
+
+
+end
