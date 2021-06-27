@@ -77,6 +77,16 @@
 
 //Profile box
 
+.profile-pic {
+  margin: auto;
+  h3{
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
 .user-name-container {
   width: -webkit-fill-available;
   display: flex;
@@ -107,6 +117,15 @@ span {
   border-bottom: 2px solid #f8f9f9;
 }
 
+.flex-main-actions {
+  display: flex;
+}
+
 .action-btn {
   margin-right: 20px;
+}
+.action-btn:hover {
+  p {
+    color: $purple;
+  }
 }
