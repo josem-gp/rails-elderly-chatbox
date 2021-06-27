@@ -3,8 +3,8 @@
     <div class="message-container">
       <div class = "event-show"></div>
       <%= simple_form_for [@user, @participant] do |f| %>
-        <%= f.association :room, collection: @rooms, prompt: "Choose a Room" %>
-        <%= f.submit "Join the room", class: "btn-recommend" %>
+        <%= f.association :room, collection: @rooms, prompt: "Choose a Room", style: "color: gray" %>
+        <%= f.submit "Join", class: "btn-recommend" %>
       <% end %>
       <div class="go-back-btn">
         <%= link_to user_path(current_user.id) do %>
