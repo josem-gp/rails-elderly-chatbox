@@ -9,10 +9,11 @@
             <%= f.input :name,
                 required: true,
                 autofocus: true,
-                placeholder: "Jose" %>
+                placeholder: "Your name" %>
             <%= f.input :alias,
                 required: true,
-                autofocus: true %>
+                autofocus: true,
+                placeholder: "Your alias" %>
           </div>
           <%= f.input :municipality,
                 required: true,
@@ -21,11 +22,13 @@
           <%= f.input :email,
                 required: true,
                 autofocus: true,
+                placeholder: "me@email.com",
                 input_html: { autocomplete: "email" }%>
           <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                placeholder: "0000000" %>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "Create a new account" %>
