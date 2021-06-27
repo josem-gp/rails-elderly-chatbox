@@ -123,10 +123,17 @@ span {
 
 .action-btn {
   margin-right: 20px;
+  p {
+    border: 1px solid $purple;
+    color: $purple;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
 }
 .action-btn:hover {
   p {
-    color: $purple;
+    color: white;
+    background-color: $purple;
   }
 }
 
