@@ -29,6 +29,18 @@
   font-weight: bold;
 }
 
+.chat-title .search-btn {
+  border: 1px solid $purple;
+  color: $purple;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.chat-title .search-btn:hover {
+  color: white;
+  background-color: $purple;
+}
+
 .chat-display {
   height: 86vh;
 }
