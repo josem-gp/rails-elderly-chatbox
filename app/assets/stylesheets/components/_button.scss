@@ -55,6 +55,7 @@
 // back-button
 
 a{
+  text-decoration: none !important;
   .back-button{
     color: $gray-back;
     margin-right: $margin * 2;
