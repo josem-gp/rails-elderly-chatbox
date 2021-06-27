@@ -1,0 +1,23 @@
+<div class="container-header">
+  <div class="header-font">
+    <h3><span>User Messages</span></h3>
+  </div>
+  <div class="container-messages">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#recommendations" type="button" role="tab" aria-controls="home" aria-selected="true">Recommendations</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#posts" type="button" role="tab" aria-controls="profile" aria-selected="false">Posts</a>
+      </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="table-recommendations-posts">
+      <div class="tab-content">
+        <div class="tab-pane active" id="recommendations" role="tabpanel" aria-labelledby="home-tab"><%= render "users/partials/partial_recommendations" %></div>
+        <div class="tab-pane" id="posts" role="tabpanel" aria-labelledby="profile-tab"><%= render "users/partials/partial_posts" %></div>
+      </div>
+    </div>
+  </div>
+</div>
