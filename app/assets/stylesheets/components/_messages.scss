@@ -42,6 +42,15 @@
 .recommendation-delete {
   display: flex;
   margin-top: $margin * 2;
+  i {
+    visibility: hidden;
+    font-size: 12px;
+    vertical-align: text-top;
+  }
+}
+
+.recommendation-delete:hover i{
+  visibility: visible;
 }
 
 .recommendation-text{

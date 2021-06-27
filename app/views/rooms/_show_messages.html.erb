@@ -22,7 +22,7 @@
             <h3><%= message.user.alias %></h3>
             <% if current_user.id == message.user_id %>
               <%= link_to user_message_path(@user,message), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="fas fa-eraser del-icon"></i>
+                <i class="fas fa-times del-icon"></i>
               <% end %>
             <% end %>
           </div>
