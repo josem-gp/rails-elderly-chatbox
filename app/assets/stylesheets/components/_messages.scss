@@ -14,22 +14,27 @@
   width: 95%;
 }
 
-.message-text{
-  margin-left: 12px;
-  margin-top: 6px;
+.message-delete {
+  display: flex;
   i {
-    color: $gray-back;
-    position: absolute;
-    top: 28px;
-    left: 36px;
-  }
-  i:hover {
-   color: $gray-hover;
+    color: gray;
+    margin-left: 8px;
+    visibility: hidden;
+    font-size: 12px;
+    vertical-align: text-top;
   }
 }
 
+.user-message:hover i {
+  visibility: visible;
+}
+
+.message-text{
+  margin-left: 12px;
+  margin-top: 6px;
+}
+
 .message-text h3 {
-  margin: 0;
   font-size: 17px;
   font-weight: bold;
 }
