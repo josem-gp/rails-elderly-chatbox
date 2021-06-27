@@ -46,14 +46,16 @@
   padding: 40px 60px;
   .header-font {
     h3 {
-       width: 100%;
-       text-align: left;
-       border-bottom: 2px solid $line-color;
-       line-height: 0.2em !important;
-       margin: 10px 0 20px;
+      width: 100%;
+      text-align: left;
+      border-bottom: 2px solid $line-color;
+      line-height: 0.2em !important;
+      margin: 10px 0 20px;
     }
 
     h3 span {
+        color: $purple;
+        font-weight: bold;
         background:#fff;
         padding-right:32px;
         border: 1px solid white;
@@ -141,6 +143,8 @@ span {
 
 .container-messages {
   margin-top: 48px;
+  overflow: scroll;
+  height: 71vh;
   .nav-tabs {
     border: none !important;
   }
