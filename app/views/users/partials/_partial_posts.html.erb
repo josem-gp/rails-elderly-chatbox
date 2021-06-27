@@ -1,1 +1,6 @@
-_partial.posts.html.erb
+<% @user.events.each do |event| %>
+  <div class="message">
+    <p class="content"><%= event.content %></p>
+    <p class="room"><%= event.room.name %></p>
+  </div>
+<% end %>
