@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+# Use let instead of before // create several contexts inside the describe
+
 RSpec.describe Room, type: :model do
   before do
     @room = Room.create(name: "Chiyoda",

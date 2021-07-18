@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+# Use let instead of before // create several contexts inside the describe
+
 RSpec.describe Message, type: :model do
   before do
     icon = Icon.create(name: 'default_icon', url: Icon::IMAGES[0])
