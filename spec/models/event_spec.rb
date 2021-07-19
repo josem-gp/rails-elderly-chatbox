@@ -2,7 +2,7 @@ require 'rails_helper'
 
 # Use let instead of before // create several contexts inside the describe
 
-RSpec.describe Event, type: :model do 
+RSpec.describe Event, type: :model do
   before do
     @room = Room.new(name: "Chiyoda",
                      room_type: "private")
@@ -18,31 +18,31 @@ RSpec.describe Event, type: :model do
 
   end
   it "is valid if it has a content, room_id and user_id" do
-    event = Event.new(room: @room, user: @user, content: 'Come see the event!')
+    event = described_class.new(room: @room, user: @user, content: 'Come see the event!')
     expect(event).to be_valid
   end
   it "is not valid if the content has less than 5 words" do
-    event = Event.new(room: @room, user: @user, content: 'Hi!')
+    event = described_class.new(room: @room, user: @user, content: 'Hi!')
     expect(event).to_not be_valid
   end
   it "should have a room_id" do
-    event = Event.new(user: @user, content: 'Come see the event!')
+    event = described_class.new(user: @user, content: 'Come see the event!')
     event.valid?
     expect(event.errors[:room]).to include("must exist")
   end
   it "should have an user_id" do
-    event = Event.new(room: @room, content: 'Come see the event!')
+    event = described_class.new(room: @room, content: 'Come see the event!')
     event.valid?
     expect(event.errors[:user]).to include("must exist")
   end
   it "is valid for a user to have several events" do
-    event = Event.create!(content: 'This place is so good!', user: @user, room: @room)
-    event2 = Event.create!(content: 'This place was amazing again!', user: @user, room: @public_room)
+    event = described_class.create!(content: 'This place is so good!', user: @user, room: @room)
+    event2 = described_class.create!(content: 'This place was amazing again!', user: @user, room: @public_room)
     expect(event2).to be_valid
   end
   it "is valid for a participant to have several events in the same room" do
-    event = Event.create!(content: 'This place is so good!', user: @user, room: @room)
-    event2 = Event.create!(content: 'This place was amazing again!', user: @user, room: @room)
+    event = described_class.create!(content: 'This place is so good!', user: @user, room: @room)
+    event2 = described_class.create!(content: 'This place was amazing again!', user: @user, room: @room)
     expect(event2).to be_valid
   end
 end
