@@ -32,15 +32,16 @@ RSpec.describe Event, type: :model do
     end
   end
   describe "event model instantiation" do
-    it "is valid for a user to have several events" do
-      event = described_class.create!(content: 'This place is so good!', user: user, room: room)
-      event2 = described_class.create!(content: 'This place was amazing again!', user: user, room: public_room)
-      expect(event2).to be_valid
+
+    let(:first_event) { described_class.create!(content: 'This place is so good!', user: user, room: room) }
+
+    it "is valid for a user to have events in different rooms" do
+      second_event = described_class.create!(content: 'This place was amazing again!', user: user, room: public_room)
+      expect(second_event).to be_valid
     end
-    it "is valid for a participant to have several events in the same room" do
-      event = described_class.create!(content: 'This place is so good!', user: user, room: room)
-      event2 = described_class.create!(content: 'This place was amazing again!', user: user, room: room)
-      expect(event2).to be_valid
+    it "is valid for a participant to have different events in the same room" do
+      second_event = described_class.create!(content: 'This place was amazing again!', user: user, room: room)
+      expect(second_event).to be_valid
     end
   end
 end
