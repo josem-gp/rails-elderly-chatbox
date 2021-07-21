@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-# Use let instead of before // create several contexts inside the describe
-
 RSpec.describe Event, type: :model do
 
   let(:room) { Room.create(name: "Chiyoda", room_type: "private") }

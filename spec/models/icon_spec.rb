@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe Icon, type: :model do
   it "is valid with a url from the list" do
     icon = described_class.new(name: "icon1",
