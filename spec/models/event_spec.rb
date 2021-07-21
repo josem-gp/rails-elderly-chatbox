@@ -3,20 +3,29 @@ require 'rails_helper'
 # Use let instead of before // create several contexts inside the describe
 
 RSpec.describe Event, type: :model do
-  before do
-    @room = Room.new(name: "Chiyoda",
-                     room_type: "private")
-    @public_room = Room.new(name: "General",
-                            room_type: "public")
-    icon = Icon.create(name: 'default_icon', url: Icon::IMAGES[0])
-    @user = User.new(name: "Tester",
-                     alias: "Test_alias",
-                     municipality: "Chiyoda-ku",
-                     email: "tester@example.com",
-                     password: "1234567",
-                     icon: icon)
 
-  end
+  let(:room) { Room.create(name: "Chiyoda", room_type: "private") }
+  let(:public_room) { Room.create(name: "General", room_type: "public") }
+  let(:icon) { Icon.create(name: 'default_icon', url: Icon::IMAGES[0]) }
+  let(:user) { User.create(name: "Tester", alias: "Test_alias",
+                           municipality: "Chiyoda-ku", email: "tester@example.com",
+                           password: "1234567", icon: icon) }
+
+
+  # before do
+  #   @room = Room.new(name: "Chiyoda",
+  #                    room_type: "private")
+  #   @public_room = Room.new(name: "General",
+  #                           room_type: "public")
+  #   icon = Icon.create(name: 'default_icon', url: Icon::IMAGES[0])
+  #   @user = User.new(name: "Tester",
+  #                    alias: "Test_alias",
+  #                    municipality: "Chiyoda-ku",
+  #                    email: "tester@example.com",
+  #                    password: "1234567",
+  #                    icon: icon)
+
+  # end
   it "is valid if it has a content, room_id and user_id" do
     event = described_class.new(room: @room, user: @user, content: 'Come see the event!')
     expect(event).to be_valid
