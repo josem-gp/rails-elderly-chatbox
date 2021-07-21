@@ -11,7 +11,7 @@ RSpec.describe Event, type: :model do
                            municipality: "Chiyoda-ku", email: "tester@example.com",
                            password: "1234567", icon: icon) }
 
-  describe 'an event needs of a user and a room' do
+  describe 'event model initialization' do
     it "is valid if it has a content, room_id and user_id" do
       event = described_class.new(room: @room, user: @user, content: 'Come see the event!')
       expect(event).to be_valid
@@ -31,14 +31,16 @@ RSpec.describe Event, type: :model do
       expect(event.errors[:user]).to include("must exist")
     end
   end
-  it "is valid for a user to have several events" do
-    event = described_class.create!(content: 'This place is so good!', user: @user, room: @room)
-    event2 = described_class.create!(content: 'This place was amazing again!', user: @user, room: @public_room)
-    expect(event2).to be_valid
-  end
-  it "is valid for a participant to have several events in the same room" do
-    event = described_class.create!(content: 'This place is so good!', user: @user, room: @room)
-    event2 = described_class.create!(content: 'This place was amazing again!', user: @user, room: @room)
-    expect(event2).to be_valid
+  describe "event model instantiation" do
+    it "is valid for a user to have several events" do
+      event = described_class.create!(content: 'This place is so good!', user: @user, room: @room)
+      event2 = described_class.create!(content: 'This place was amazing again!', user: @user, room: @public_room)
+      expect(event2).to be_valid
+    end
+    it "is valid for a participant to have several events in the same room" do
+      event = described_class.create!(content: 'This place is so good!', user: @user, room: @room)
+      event2 = described_class.create!(content: 'This place was amazing again!', user: @user, room: @room)
+      expect(event2).to be_valid
+    end
   end
 end
