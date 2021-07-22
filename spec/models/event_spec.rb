@@ -39,7 +39,7 @@ RSpec.describe Event, type: :model do
       second_event = described_class.create(content: 'This place was amazing again!', user: user, room: public_room)
       expect(second_event).to be_valid
     end
-    it "is valid for a participant to have different events in the same room" do
+    it "is valid for a user to have different events in the same room" do
       second_event = described_class.create(content: 'This place was amazing again!', user: user, room: room)
       expect(second_event).to be_valid
     end

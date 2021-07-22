@@ -12,7 +12,7 @@ RSpec.describe Message, type: :model do
   let(:shop) { Shop.create(name: 'Test', address: 'Test address',
                            phone_number: 'Test number', website: 'Test url')}
 
-  describe 'event model initialization' do
+  describe 'message model initialization' do
     it "is valid with a title, content, votes, user_id, shop_id and room_id" do
       message = described_class.new(title: 'Message', content: 'This place is so good!', vote: 1, user: user, room: room, shop: shop)
       expect(message).to be_valid
@@ -49,18 +49,18 @@ RSpec.describe Message, type: :model do
     end
   end
 
-  describe "event model instantiation" do
+  describe "message model instantiation" do
     let!(:first_message) { described_class.create(title: 'Message',
                                                   content: 'This place is so good!',
                                                   vote: 1, user: user, room: room,
                                                   shop: shop) }
     #we need this to run always so we use ! so that it doesnt lazy-load
 
-    it "is valid for a user to have several messages" do
+    it "is valid for a user to have messages in different rooms" do
       second_message = described_class.create(title: 'Second Message', content: 'This place was amazing again!', vote: 1, user: user, room: public_room, shop: shop)
       expect(second_message).to be_valid
     end
-    it "is valid for a user to have several messages in the same room" do
+    it "is valid for a user to have different messages in the same room" do
       second_message = described_class.create(title: 'Second Message', content: 'This place was amazing again!', vote: 1, user: user, room: room, shop: shop)
       expect(second_message).to be_valid
     end
