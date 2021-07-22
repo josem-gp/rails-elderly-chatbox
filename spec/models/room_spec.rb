@@ -3,12 +3,8 @@ require 'rails_helper'
 # Use let instead of before // create several contexts inside the describe
 
 RSpec.describe Room, type: :model do
-  # before do
-  #   @room = described_class.create(name: "Chiyoda",
-  #                                  room_type: "private")
-  # end
 
-  let(:room) { described_class.create(name: "Chiyoda", room_type: "private") }
+  let!(:room) { described_class.create(name: "Chiyoda", room_type: "private") }
 
   it "is valid with a name and room_type" do
     room = described_class.new(name: "Adachi",
@@ -16,10 +12,11 @@ RSpec.describe Room, type: :model do
     expect(room).to be_valid
   end
   it "doesnt allow duplicate names" do
-    room = described_class.new(name: "Chiyoda",
-                               room_type: "private")
-    room.valid?
-    expect(room.errors[:name]).to include("has already been taken")
+    first_room = described_class.create(name: "Chiyoda", room_type: "private")
+    second_room = described_class.new(name: "Chiyoda",
+                                      room_type: "private")
+    second_room.valid?
+    expect(second_room.errors[:name]).to include("has already been taken")
   end
   it "is invalid without a name" do
     room = described_class.new(name: nil)
@@ -46,8 +43,8 @@ RSpec.describe Room, type: :model do
                          email: "tester1@example.com",
                          password: "1234567",
                          icon: icon)
-    participant = Participant.create(room: @room, user: user)
-    participant1 = Participant.create(room: @room, user: user1)
+    participant = Participant.create(room: room, user: user)
+    participant1 = Participant.create(room: room, user: user1)
 
     expect(participant1.room).to be_valid
   end
