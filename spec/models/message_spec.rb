@@ -54,6 +54,7 @@ RSpec.describe Message, type: :model do
                                                   content: 'This place is so good!',
                                                   vote: 1, user: user, room: room,
                                                   shop: shop) }
+    #we need this to run always so we use ! so that it doesnt lazy-load
 
     it "is valid for a user to have several messages" do
       second_message = described_class.create(title: 'Second Message', content: 'This place was amazing again!', vote: 1, user: user, room: public_room, shop: shop)
