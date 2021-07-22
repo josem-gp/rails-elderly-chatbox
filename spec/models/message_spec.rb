@@ -3,20 +3,27 @@ require 'rails_helper'
 # Use let instead of before // create several contexts inside the describe
 
 RSpec.describe Message, type: :model do
-  before do
-    icon = Icon.create(name: 'default_icon', url: Icon::IMAGES[0])
-    @room = Room.new(name: "Chiyoda",
-                     room_type: "private")
-    @public_room = Room.new(name: "General",
-                            room_type: "public")
-    @user = User.new(name: "Tester",
-                     alias: "Test_alias",
-                     municipality: "Chiyoda-ku",
-                     email: "tester@example.com",
-                     password: "1234567",
-                     icon: icon)
-    @shop = Shop.new(name: 'Test', address: 'Test address', phone_number: 'Test number', website: 'Test url')
-  end
+  let(:room) { Room.create(name: "Chiyoda", room_type: "private") }
+  let(:public_room) { Room.create(name: "General", room_type: "public") }
+  let(:icon) { Icon.create(name: 'default_icon', url: Icon::IMAGES[0]) }
+  let(:user) { User.create(name: "Tester", alias: "Test_alias",
+                           municipality: "Chiyoda-ku", email: "tester@example.com",
+                           password: "1234567", icon: icon) }
+
+  # before do
+  #   icon = Icon.create(name: 'default_icon', url: Icon::IMAGES[0])
+  #   @room = Room.new(name: "Chiyoda",
+  #                    room_type: "private")
+  #   @public_room = Room.new(name: "General",
+  #                           room_type: "public")
+  #   @user = User.new(name: "Tester",
+  #                    alias: "Test_alias",
+  #                    municipality: "Chiyoda-ku",
+  #                    email: "tester@example.com",
+  #                    password: "1234567",
+  #                    icon: icon)
+  #   @shop = Shop.new(name: 'Test', address: 'Test address', phone_number: 'Test number', website: 'Test url')
+  # end
   it "is valid with a title, content, votes, user_id, shop_id and room_id" do
     message = described_class.new(title: 'Message', content: 'This place is so good!', vote: 1, user: @user, room: @room, shop: @shop)
     expect(message).to be_valid
