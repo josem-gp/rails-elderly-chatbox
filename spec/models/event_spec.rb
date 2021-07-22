@@ -29,6 +29,7 @@ RSpec.describe Event, type: :model do
       expect(event.errors[:user]).to include("must exist")
     end
   end
+
   describe "event model instantiation" do
 
     let(:first_event) { described_class.create!(content: 'This place is so good!', user: user, room: room) }

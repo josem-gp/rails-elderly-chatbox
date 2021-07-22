@@ -48,14 +48,18 @@ RSpec.describe Message, type: :model do
       expect(message.errors[:shop]).to include("must exist")
     end
   end
-  it "is valid for a user to have several messages" do
-    message = described_class.create!(title: 'Message', content: 'This place is so good!', vote: 1, user: @user, room: @room, shop: @shop)
-    message2 = described_class.create!(title: 'Message2', content: 'This place was amazing again!', vote: 1, user: @user, room: @public_room, shop: @shop)
-    expect(message2).to be_valid
-  end
-  it "is valid for a user to have several messages in the same room" do
-    message = described_class.create!(title: 'Message', content: 'This place is so good!', vote: 1, user: @user, room: @room, shop: @shop)
-    message2 = described_class.create!(title: 'Message2', content: 'This place was amazing again!', vote: 1, user: @user, room: @room, shop: @shop)
-    expect(message2).to be_valid
+
+  describe "event model instantiation" do
+
+    it "is valid for a user to have several messages" do
+      message = described_class.create!(title: 'Message', content: 'This place is so good!', vote: 1, user: @user, room: @room, shop: @shop)
+      message2 = described_class.create!(title: 'Message2', content: 'This place was amazing again!', vote: 1, user: @user, room: @public_room, shop: @shop)
+      expect(message2).to be_valid
+    end
+    it "is valid for a user to have several messages in the same room" do
+      message = described_class.create!(title: 'Message', content: 'This place is so good!', vote: 1, user: @user, room: @room, shop: @shop)
+      message2 = described_class.create!(title: 'Message2', content: 'This place was amazing again!', vote: 1, user: @user, room: @room, shop: @shop)
+      expect(message2).to be_valid
+    end
   end
 end
