@@ -3,10 +3,13 @@ require 'rails_helper'
 # Use let instead of before // create several contexts inside the describe
 
 RSpec.describe Room, type: :model do
-  before do
-    @room = described_class.create(name: "Chiyoda",
-                                   room_type: "private")
-  end
+  # before do
+  #   @room = described_class.create(name: "Chiyoda",
+  #                                  room_type: "private")
+  # end
+
+  let(:room) { described_class.create(name: "Chiyoda", room_type: "private") }
+
   it "is valid with a name and room_type" do
     room = described_class.new(name: "Adachi",
                                room_type: "private")
