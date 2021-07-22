@@ -32,7 +32,7 @@ RSpec.describe Event, type: :model do
 
   describe "event model instantiation" do
 
-    let(:first_event) { described_class.create(content: 'This place is so good!', user: user, room: room) }
+    let!(:first_event) { described_class.create(content: 'This place is so good!', user: user, room: room) }
 
     it "is valid for a user to have events in different rooms" do
       second_event = described_class.create(content: 'This place was amazing again!', user: user, room: public_room)

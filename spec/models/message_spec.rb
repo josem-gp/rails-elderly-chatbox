@@ -50,10 +50,10 @@ RSpec.describe Message, type: :model do
   end
 
   describe "event model instantiation" do
-    let(:first_message) { described_class.create(title: 'Message',
-                                                 content: 'This place is so good!',
-                                                 vote: 1, user: user, room: room,
-                                                 shop: shop) }
+    let!(:first_message) { described_class.create(title: 'Message',
+                                                  content: 'This place is so good!',
+                                                  vote: 1, user: user, room: room,
+                                                  shop: shop) }
 
     it "is valid for a user to have several messages" do
       second_message = described_class.create(title: 'Second Message', content: 'This place was amazing again!', vote: 1, user: user, room: public_room, shop: shop)
