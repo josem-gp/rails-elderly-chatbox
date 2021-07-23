@@ -7,37 +7,37 @@ RSpec.describe User, type: :model do
     end
 
     it "is invalid without a name" do
-      user = described_class.new(name: nil)
+      user = FactoryBot.build(:user, name: nil)
       user.valid?
       expect(user.errors[:name]).to include("can't be blank")
     end
     it "is invalid without an alias" do
-      user = described_class.new(alias: nil)
+      user = FactoryBot.build(:user, alias: nil)
       user.valid?
       expect(user.errors[:alias]).to include("can't be blank")
     end
     it "is invalid with an alias less that 3 characters" do
-      user = described_class.new(alias: 'a')
+      user = FactoryBot.build(:user, alias: 'a')
       user.valid?
       expect(user.errors[:alias]).to include("is too short (minimum is 3 characters)")
     end
     it "is invalid without a municipality" do
-      user = described_class.new(municipality: nil)
+      user = FactoryBot.build(:user, municipality: nil)
       user.valid?
       expect(user.errors[:municipality]).to include("can't be blank")
     end
     it "is invalid with a municipality not in the list" do
-      user = described_class.new(municipality: 'Hokkaido')
+      user = FactoryBot.build(:user, municipality: 'Hokkaido')
       user.valid?
       expect(user.errors[:municipality]).to include("is not included in the list")
     end
     it "is invalid without an email address" do
-      user = described_class.new(email: nil)
+      user = FactoryBot.build(:user, email: nil)
       user.valid?
       expect(user.errors[:email]).to include("can't be blank")
     end
     it "is invalid without an icon" do
-      user = described_class.new(icon: nil)
+      user = FactoryBot.build(:user, icon: nil)
       user.valid?
       expect(user.errors[:icon]).to include("must exist")
     end
