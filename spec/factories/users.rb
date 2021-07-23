@@ -5,6 +5,7 @@ FactoryBot.define do
     municipality {"Chiyoda-ku"}
     email {"tester@example.com"}
     password {"1234567"}
-    icon {create(:icon)}
+    # icon {create(:icon)}
+    association :icon, factory: :icon
   end
 end
