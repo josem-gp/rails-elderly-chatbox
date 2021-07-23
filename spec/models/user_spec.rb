@@ -43,14 +43,9 @@ RSpec.describe User, type: :model do
     end
     it "is invalid with a duplicate email address" do
       FactoryBot.create(:user)
-      user = described_class.new(name: "Tester",
-                                 alias: "Test_alias",
-                                 municipality: "Chiyoda-ku",
-                                 email: "tester@example.com",
-                                 password: "1234567",
-                                 icon: FactoryBot.create(:icon))
-      user.valid?
-      expect(user.errors[:email]).to include("has already been taken")
+      new_user = FactoryBot.build(:user)
+      new_user.valid?
+      expect(new_user.errors[:email]).to include("has already been taken")
     end
   end
   describe 'user model methods' do
