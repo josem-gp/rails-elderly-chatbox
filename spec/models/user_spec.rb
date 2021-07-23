@@ -1,14 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:icon) { Icon.create(name: 'default_icon', url: Icon::IMAGES[0]) }
-
   describe 'user model initialization' do
     it "is valid with a name, alias, municipality, email, password and icon" do
-      user = described_class.new(name: "Tester", alias: "Test_alias",
-                                 municipality: "Chiyoda-ku", email: "tester@example.com",
-                                 password: "1234567", icon: icon)
-      expect(user).to be_valid
+      expect(FactoryBot.create(:user)).to be_valid
     end
 
     it "is invalid without a name" do
@@ -47,18 +42,13 @@ RSpec.describe User, type: :model do
       expect(user.errors[:icon]).to include("must exist")
     end
     it "is invalid with a duplicate email address" do
-      described_class.create(name: "Tester1",
-                             alias: "Test_alias1",
-                             municipality: "Chiyoda-ku",
-                             email: "tester@example.com",
-                             password: "1234567",
-                             icon: icon)
+      FactoryBot.create(:user)
       user = described_class.new(name: "Tester",
                                  alias: "Test_alias",
                                  municipality: "Chiyoda-ku",
                                  email: "tester@example.com",
                                  password: "1234567",
-                                 icon: icon)
+                                 icon: FactoryBot.create(:icon))
       user.valid?
       expect(user.errors[:email]).to include("has already been taken")
     end
