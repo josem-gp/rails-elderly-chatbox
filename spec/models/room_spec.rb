@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-# Use let instead of before // create several contexts inside the describe
-
 RSpec.describe Room, type: :model do
 
   describe 'room model initialization' do

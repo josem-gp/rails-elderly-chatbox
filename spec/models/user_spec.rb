@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-# Use let to avoid duplicates // create several contexts inside the describe
-
 RSpec.describe User, type: :model do
 
   it "is valid with a name, alias, municipality, email, password and icon" do
