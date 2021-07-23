@@ -50,11 +50,7 @@ RSpec.describe User, type: :model do
   end
   describe 'user model methods' do
     it "returns the name capitalized" do
-      jose = described_class.create(name: "jose manuel",
-                                    alias: "jgp",
-                                    municipality: "Chiyoda-ku",
-                                    email: "jose@example.com",
-                                    password: "1234567")
+      jose = FactoryBot.create(:user, name: 'jose manuel')
       expect(jose.capitalize_first).to eq "Jose Manuel"
     end
   end
