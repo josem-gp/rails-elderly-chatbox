@@ -29,8 +29,8 @@ RSpec.describe UsersController, type: :controller do
     end
   end
   describe "PATCH #update" do
-    let!(:user) { FactoryBot.create(:user) }
-    let!(:icon) { FactoryBot.create(:icon, url: Icon::IMAGES[3]) }
+    let(:user) { FactoryBot.create(:user) }
+    let(:icon) { FactoryBot.create(:icon, url: Icon::IMAGES[3]) }
     context "as an authenticated user" do
       it "updates the user icon" do
         sign_in user
