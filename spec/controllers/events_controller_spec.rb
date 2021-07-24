@@ -19,4 +19,22 @@ RSpec.describe EventsController, type: :controller do
       end
     end
   end
+  describe "DELETE #destroy" do
+    context "as an authenticated user" do
+      let(:user) { FactoryBot.create(:user) }
+      let(:public_room) { Room.create(name: "General", room_type: "public") }
+      let!(:event) { Event.create(room: public_room, user: user, content: 'Come see the event!') }
+      it "responds succesfully" do
+        sign_in user
+        expect { delete :destroy, params: { user_id: user, id: event.id }
+                 }.to change(user.events, :count).by(-1)
+      end
+    end
+    context "as an non-authenticated user" do
+      it "returns a 302 response" do
+        # post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } }
+        # expect(response).to have_http_status "302"
+      end
+    end
+  end
 end
