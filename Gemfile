@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem 'rails-controller-testing'
 gem 'pg_search', '~> 2.3.0'
 gem 'turbolinks_render'
 gem 'devise'
