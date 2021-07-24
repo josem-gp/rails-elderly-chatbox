@@ -7,19 +7,30 @@ RSpec.describe MessagesController, type: :controller do
     let(:shop) { Shop.create(name: 'Test', address: 'Test address',
                              phone_number: 'Test number', website: 'Test url')}
     context "as an authenticated user" do
-      it "responds succesfully" do
-        sign_in user
-        expect { post :create, params: { user_id: user.id,
-                                         message: {room_id: room.id, content: "Come see the event",
-                                                   title: 'Message', shop_id: shop.id } }
-                 }.to change(user.messages, :count).by(1)
+      context "with valid attributes" do
+        it "responds succesfully" do
+          sign_in user
+          expect { post :create, params: { user_id: user.id,
+                                           message: {room_id: room.id, content: "Come see the event",
+                                                     title: 'Message', shop_id: shop.id } }
+                   }.to change(user.messages, :count).by(1)
+        end
+        it "redirects to the user show page" do
+          sign_in user
+          post :create, params: { user_id: user.id,
+                                  message: {room_id: room.id, content: "Come see the event",
+                                            title: 'Message', shop_id: shop.id } }
+          expect(response).to redirect_to "/users/#{user.id}"
+        end
       end
-      it "redirects to the user show page" do
-        sign_in user
-        post :create, params: { user_id: user.id,
-                                message: {room_id: room.id, content: "Come see the event",
-                                          title: 'Message', shop_id: shop.id } }
-        expect(response).to redirect_to "/users/#{user.id}"
+      context "with invalid attributes" do
+        it "doesnt add a message" do
+          sign_in user
+          expect { post :create, params: { user_id: user.id,
+                                           message: {room_id: room.id, content: "A",
+                                                     title: 'Message', shop_id: shop.id } }
+                   }.to_not change(user.messages, :count)
+        end
       end
     end
     context "as an non-authenticated user" do
