@@ -22,12 +22,14 @@ RSpec.describe MessagesController, type: :controller do
         expect(response).to redirect_to "/users/#{user.id}"
       end
     end
-    # context "as an non-authenticated user" do
-    #   it "returns a 302 response" do
-    #     post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } }
-    #     expect(response).to have_http_status "302"
-    #   end
-    # end
+    context "as an non-authenticated user" do
+      it "returns a 302 response" do
+        post :create, params: { user_id: user.id,
+                                message: {room_id: room.id, content: "Come see the event",
+                                          title: 'Message', shop_id: shop.id } }
+        expect(response).to have_http_status "302"
+      end
+    end
   end
   # describe "DELETE #destroy" do
   #   let(:user) { FactoryBot.create(:user) }
