@@ -36,8 +36,8 @@ RSpec.describe EventsController, type: :controller do
       end
       it "redirects to the user show page" do
         sign_in user
-        post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } }
-        expect(response).to redirect_to "/users/#{user.id}"
+        delete :destroy, params: { user_id: user, id: event.id }
+        expect(response).to redirect_to "/users/#{user.id}/rooms/#{public_room.id}"
       end
     end
     context "as an non-authenticated user" do
