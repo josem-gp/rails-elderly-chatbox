@@ -12,5 +12,11 @@ RSpec.describe EventsController, type: :controller do
                  }.to change(user.events, :count).by(1)
       end
     end
+    context "as an non-authenticated user" do
+      it "returns a 302 response" do
+        post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } }
+        expect(response).to have_http_status "302"
+      end
+    end
   end
 end
