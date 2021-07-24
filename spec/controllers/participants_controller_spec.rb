@@ -13,8 +13,8 @@ RSpec.describe ParticipantsController, type: :controller do
     end
     context "as a non-authenticated user" do
       it "returns a 302 response" do
-        # get :show, params: { id: room.id, user_id: user.id}
-        # expect(response).to have_http_status "302"
+        post :create, params: { user_id: user.id, participant: {room_id: room.id} }
+        expect(response).to have_http_status "302"
       end
     end
   end
