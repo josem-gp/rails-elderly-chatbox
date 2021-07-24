@@ -5,16 +5,26 @@ RSpec.describe EventsController, type: :controller do
     let(:user) { FactoryBot.create(:user) }
     let(:public_room) { Room.create(name: "General", room_type: "public") }
     context "as an authenticated user" do
-      it "responds succesfully" do
-        sign_in user
-        # post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } } #this is the post test. it needs an user_id and then the event is required in its params (check events_controller)
-        expect { post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } }
-                 }.to change(user.events, :count).by(1)
+      context "with valid attributes" do
+        it "responds succesfully" do
+          sign_in user
+          # post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } } #this is the post test. it needs an user_id and then the event is required in its params (check events_controller)
+          expect { post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } }
+                   }.to change(user.events, :count).by(1)
+        end
+        it "redirects to the user show page" do
+          sign_in user
+          post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } }
+          expect(response).to redirect_to "/users/#{user.id}"
+        end
       end
-      it "redirects to the user show page" do
-        sign_in user
-        post :create, params: { user_id: user.id, event: {room_id: public_room.id, content: "Come see the event" } }
-        expect(response).to redirect_to "/users/#{user.id}"
+      context "with invalid attributes" do
+        it "doesnt add an event" do
+          sign_in user
+          expect { post :create, params: { user_id: user.id,
+                                           event: {room_id: public_room.id, content: "A" } }
+                   }.to_not change(user.events, :count)
+        end
       end
     end
     context "as an non-authenticated user" do
