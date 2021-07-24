@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Message, type: :model do
   let(:room) { Room.create(name: "Chiyoda", room_type: "private") }
-  let(:public_room) { Room.create(name: "General", room_type: "public") }
+  let(:room_two) { Room.create(name: "Bunkyo", room_type: "private") }
   let(:icon) { Icon.create(name: 'default_icon', url: Icon::IMAGES[0]) }
   let(:user) { User.create(name: "Tester", alias: "Test_alias",
                            municipality: "Chiyoda-ku", email: "tester@example.com",
@@ -55,7 +55,7 @@ RSpec.describe Message, type: :model do
     #we need this to run always so we use ! so that it doesnt lazy-load
 
     it "is valid for a user to have messages in different rooms" do
-      second_message = described_class.create(title: 'Second Message', content: 'This place was amazing again!', vote: 1, user: user, room: public_room, shop: shop)
+      second_message = described_class.create(title: 'Second Message', content: 'This place was amazing again!', vote: 1, user: user, room: room_two, shop: shop)
       expect(second_message).to be_valid
     end
     it "is valid for a user to have different messages in the same room" do
