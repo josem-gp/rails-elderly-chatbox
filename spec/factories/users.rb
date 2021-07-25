@@ -12,4 +12,11 @@ FactoryBot.define do
     # association :icon, factory: :icon #explicitly
     # icon { association :icon } #inline
   end
+
+  trait :with_rooms do
+    after(:create) do |user|
+      room = Room.create(name: "Adachi", room_type: "private")
+      participant = Participant.create(user: user, room: room)
+    end
+  end
 end
