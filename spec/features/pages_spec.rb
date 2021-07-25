@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Pages", type: :feature do
   scenario "user logs in" do
-    user = FactoryBot.create(:user, email: 'tester4@tester.com', alias: 'noalias4')
+    user = FactoryBot.create(:user)
 
     visit root_path
     click_link  "Log in"
@@ -13,7 +13,7 @@ RSpec.feature "Pages", type: :feature do
     expect(page).to have_current_path "/users/#{user.id}"
   end
   scenario "user logs in with wrong information" do
-    user = FactoryBot.create(:user, email: 'tester4@tester.com', alias: 'noalias4')
+    user = FactoryBot.create(:user)
 
     visit root_path
     click_link  "Log in"
