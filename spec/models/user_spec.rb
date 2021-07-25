@@ -36,14 +36,9 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors[:email]).to include("can't be blank")
     end
-    it "is invalid without an icon" do
-      user = FactoryBot.build(:user, icon: nil)
-      user.valid?
-      expect(user.errors[:icon]).to include("must exist")
-    end
     it "is invalid with a duplicate email address" do
-      FactoryBot.create(:user)
-      new_user = FactoryBot.build(:user)
+      FactoryBot.create(:user, email: "samemail@hotmail.com")
+      new_user = FactoryBot.build(:user, email: "samemail@hotmail.com")
       new_user.valid?
       expect(new_user.errors[:email]).to include("has already been taken")
     end

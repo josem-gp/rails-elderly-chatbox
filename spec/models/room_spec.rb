@@ -31,20 +31,8 @@ RSpec.describe Room, type: :model do
     let!(:room) { described_class.create(name: "Chiyoda", room_type: "private") }
 
     it "allows a room to have several users" do
-      icon = Icon.create!(name: 'default_icon', url: Icon::IMAGES[0])
-      user = User.create!(name: "Tester",
-                          alias: "Test_alias",
-                          municipality: "Chiyoda-ku",
-                          email: "tester@example.com",
-                          password: "1234567",
-                          icon: icon)
-      icon = Icon.create!(name: 'default_icon', url: Icon::IMAGES[0])
-      user1 = User.create!(name: "Tester1",
-                           alias: "Test_alias1",
-                           municipality: "Chiyoda-ku",
-                           email: "tester1@example.com",
-                           password: "1234567",
-                           icon: icon)
+      user = FactoryBot.create(:user)
+      user1 = FactoryBot.create(:user)
       participant = Participant.create(room: room, user: user)
       participant1 = Participant.create(room: room, user: user1)
 

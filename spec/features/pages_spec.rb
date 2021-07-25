@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Pages", type: :feature do
   scenario "user logs in" do
-    user = FactoryBot.create(:user, email: 'tester@tester.com', alias: 'noalias')
+    user = FactoryBot.create(:user, email: 'tester4@tester.com', alias: 'noalias4')
 
     visit root_path
     click_link  "Log in"
@@ -13,7 +13,7 @@ RSpec.feature "Pages", type: :feature do
     expect(page).to have_current_path "/users/#{user.id}"
   end
   scenario "user logs in with wrong information" do
-    user = FactoryBot.create(:user, email: 'tester@tester.com', alias: 'noalias')
+    user = FactoryBot.create(:user, email: 'tester4@tester.com', alias: 'noalias4')
 
     visit root_path
     click_link  "Log in"
@@ -28,7 +28,7 @@ RSpec.feature "Pages", type: :feature do
     fill_in "Name", with: "jose"
     fill_in "Alias", with: "jgptest"
     select "Adachi-ku", from: "Municipality"
-    fill_in "Email", with: "test@test.com"
+    fill_in "Email", with: "abcd@test.com"
     within ".user_password" do
       fill_in 'Password', with: 'password' #it didnt work with a simply fill_in so i had to use a within
     end

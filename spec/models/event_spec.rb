@@ -4,10 +4,7 @@ RSpec.describe Event, type: :model do
 
   let(:public_room) { Room.create(name: "Events", room_type: "public") }
   let(:public_room_two) { Room.create(name: "General", room_type: "public") }
-  let(:icon) { Icon.create(name: 'default_icon', url: Icon::IMAGES[0]) }
-  let(:user) { User.create(name: "Tester", alias: "Test_alias",
-                           municipality: "Chiyoda-ku", email: "tester@example.com",
-                           password: "1234567", icon: icon) }
+  let(:user) { FactoryBot.create(:user) }
 
   describe 'event model initialization' do
     it "is valid if it has a content, room_id and user_id" do

@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :user do
     name {"Tester"}
-    self.alias {"tester"}
+    # self.alias {"tester"}
+    sequence(:alias) { |n| "tester#{n}" }
     municipality {"Chiyoda-ku"}
-    email {"tester@example.com"}
+    sequence(:email) { |n| "test#{n}@example.com" }
     password {"1234567"}
     # icon {create(:icon)}
     ##since icon is connected with user we can use associations (three ways):

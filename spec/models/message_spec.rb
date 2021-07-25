@@ -3,10 +3,7 @@ require 'rails_helper'
 RSpec.describe Message, type: :model do
   let(:room) { Room.create(name: "Chiyoda", room_type: "private") }
   let(:room_two) { Room.create(name: "Bunkyo", room_type: "private") }
-  let(:icon) { Icon.create(name: 'default_icon', url: Icon::IMAGES[0]) }
-  let(:user) { User.create(name: "Tester", alias: "Test_alias",
-                           municipality: "Chiyoda-ku", email: "tester@example.com",
-                           password: "1234567", icon: icon) }
+  let(:user) { FactoryBot.create(:user) }
   let(:shop) { Shop.create(name: 'Test', address: 'Test address',
                            phone_number: 'Test number', website: 'Test url')}
 
