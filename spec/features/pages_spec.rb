@@ -25,7 +25,6 @@ RSpec.feature "Pages", type: :feature do
   scenario "guest signs up" do
     visit root_path
     click_link "Sign up"
-    save_and_open_page
     fill_in "Name", with: "jose"
     fill_in "Alias", with: "jgptest"
     select "Adachi-ku", from: "Municipality"
