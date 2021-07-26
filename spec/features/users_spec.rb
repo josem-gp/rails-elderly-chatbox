@@ -28,6 +28,18 @@ RSpec.feature "Users", type: :feature do
       click_button "Join"
     }.to change(user.rooms, :count).by(1)
   end
+  scenario "user creates a post", js:true do
+    user = FactoryBot.create(:user, :with_rooms)
+    login_as(user)
+    visit "users/#{user.id}"
+    find(:xpath, "/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[3]/div/div[5]").click
+    sleep 1 #so that the modal appears
+    expect{
+      fill_in "Content", with: "hey come see the event!"
+      select "General", from: "Room"
+      click_button "Post it!"
+    }.to change(user.events, :count).by(1)
+  end
   scenario "user clicks in the vertical navbar", js:true do
     user = FactoryBot.create(:user, :with_rooms)
     login_as(user)

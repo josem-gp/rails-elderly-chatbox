@@ -16,7 +16,10 @@ FactoryBot.define do
   trait :with_rooms do
     after(:create) do |user|
       room = Room.create(name: "Adachi", room_type: "private")
-      participant = Participant.create(user: user, room: room)
+      room_public = Room.create(name: "General", room_type: "public")
+      [room, room_public].each do |r|
+        participant = Participant.create(user: user, room: r)
+      end
     end
   end
 end
