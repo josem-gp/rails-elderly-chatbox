@@ -48,4 +48,12 @@ RSpec.feature "Users", type: :feature do
     sleep 1
     expect(page).to have_text "My Page"
   end
+  scenario "user clicks the log out button", js:true do
+    user = FactoryBot.create(:user, :with_rooms)
+    login_as(user)
+    visit "users/#{user.id}"
+    find(:xpath, "/html/body/div/div[2]/div[1]/div/ul/li").click
+    find(:xpath, "/html/body/div/div[2]/div[1]/div/ul/li/div/a").click
+    expect(page).to have_text "Signed out successfully"
+  end
 end
